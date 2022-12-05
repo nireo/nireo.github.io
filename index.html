@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="data:image/png;base64," />
+  <title>laini | home</title>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      body {
+        color: #fff;
+        background: #000;
+      }
+      a:link {
+        color: #cdf;
+      }
+      a:hover,
+      a:visited:hover {
+        color: #def;
+      }
+      a:visited {
+        color: #dcf;
+      }
+    }
+    body {
+      font: 1.2em/1.62 sans-serif;
+      margin: 0;
+    }
+    .content {
+      margin: 1em auto;
+      max-width: 40em;
+      padding: 0 0.62em;
+    }
+
+    #menu {
+      clear: both;
+      color: #069;
+      overflow: hidden;
+      background-color: #222222;
+      padding: 0.7ex;
+    }
+    #menu a {
+      padding: 0.5ex 1ex;
+      color: #fff;
+    }
+    #header a,
+    #nav a,
+    #menu a {
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+    }
+    @media print {
+      body {
+        max-width: none;
+      }
+    }
+    .right {
+      float: right;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <div id="menu">
+    <a href="/index.html"><b>home</b></a>
+    <a href="/posts.html">posts</a>
+    <a href="/projects.html">projects</a>
+    <span class="right">
+      <a
+        href="https://github.com/nireo"
+        rel="noopener noreferrer"
+        target="_blank"
+        >github</a
+      >
+    </span>
+  </div>
+  <div class="content">
+    <header>
+      <h1>laini's site</h1>
+      <em>hobby programmer from finland</em>
+    </header>
+    <h2>interests and projects</h2>
+    <p>
+      Previously I did a lot of web development, but nowadays I'm more
+      interested in building distributed systems and writing systems
+      applications. Some projects I'm really happy about:
+    </p>
+    <ul>
+      <li>
+        <a
+          href="https://github.com/nireo/dcache"
+          rel="noopener noreferrer"
+          target="_blank"
+          >dcache</a
+        >: a fast distributed in-memory cache built in go.
+      </li>
+      <li>
+        <a
+          href="https://github.com/nireo/jakaja"
+          rel="noopener noreferrer"
+          target="_blank"
+          >jakaja</a
+        >: a very minimal distributed file-system built in go.
+      </li>
+      <li>
+        <a
+          href="https://github.com/nireo/norppadb"
+          rel="noopener noreferrer"
+          target="_blank"
+          >norppadb</a
+        >: a robust distributed key-value store built in go.
+      </li>
+      <li>
+        <a
+          href="https://github.com/nireo/upfi"
+          rel="noopener noreferrer"
+          target="_blank"
+          >upfi</a
+        >: a file hosting web app built without javascript in go
+      </li>
+      <li>
+        <a
+          href="https://github.com/nireo/gocry"
+          rel="noopener noreferrer"
+          target="_blank"
+          >gocry</a
+        >: a proof of concept ransomware built in go
+      </li>
+      <li>
+        <a
+          href="https://github.com/nireo/rapu"
+          rel="noopener noreferrer"
+          target="_blank"
+          >rapu</a
+        >: a nosql database written in pure rust
+      </li>
+      <li>
+        <a
+          href="https://github.com/nireo/karu"
+          rel="noopener noreferrer"
+          target="_blank"
+          >karu</a
+        >: a bitcask style c++ key-value store for linux
+      </li>
+    </ul>
+
+    <p>
+      Almost all of the projects I've worked on are hosted on my
+      <a
+        href="https://github.com/nireo"
+        rel="noopener noreferrer"
+        target="_blank"
+        >github</a
+      >. Most of the projects are finished if they haven't seen a commit in
+      ages, but some projects are also abandoned due to loss of interest.
+    </p>
+
+    <p>
+      I'm currently looking for a job! I'm most confident programming with Go,
+      but I also feel confident in writing web and systems applications.
+    </p>
+  </div>
+</html>
