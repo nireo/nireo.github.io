@@ -29,7 +29,7 @@
           rel="noopener noreferrer"
           target="_blank"
           >chibi</a
-        >: a distributed sql database written using only go standard library
+        >: a distributed SQL database written using only go standard library
       </li>
       <li>
         <a
@@ -37,7 +37,7 @@
           rel="noopener noreferrer"
           target="_blank"
           >mc</a
-        >: a C compiler that outputs assembly.
+        >: a C compiler written in Go. The project contains a lexer, parser, IR generation and x64 assembly generation.
       </li>
       <li>
         <a
@@ -45,7 +45,7 @@
           rel="noopener noreferrer"
           target="_blank"
           >mci</a
-        >: a proof of concept distributed CI/CD pipeline service containing a website interface
+        >: a proof of concept distributed CI/CD pipeline service containing a website interface. There is a main orchestrator which then distributes work amongst agents that execute pipelines defined using yaml. The agents execute pipelines in a given docker image such as alpine.
       </li>
       <li>
         <a
@@ -53,7 +53,7 @@
           rel="noopener noreferrer"
           target="_blank"
           >serie</a
-        >: a embeddable time series database written
+        >: a embeddable time series database that employs a custom LSM tree modified to more efficiently query time series data also employs delta-delta encoding to reduce the amount of memory required for storing the data. Contains a HTTP api and a simple distribution mechanism using consistent hashing. There is also a parser for a custom query language that can be used to aggregate data.
       </li>
       <li>
         <a
@@ -61,7 +61,7 @@
           rel="noopener noreferrer"
           target="_blank"
           >dcache</a
-        >: a fast distributed in-memory cache built
+        >: a fast distributed in-memory cache built using go. It uses gRPC to communicate between nodes, serf to manage the cluster, and raft for keeping the distributed consensus.
       </li>
       <li>
         <a
@@ -69,7 +69,7 @@
           rel="noopener noreferrer"
           target="_blank"
           >distsql</a
-        >: a distributed SQLite3 database built
+        >: a distributed SQLite3 database built using go. It has a HTTP api and nodes communicate using gRPC. Distributed consensus is implemented using raft.
       </li>
       <li>
         <a
@@ -77,7 +77,15 @@
           rel="noopener noreferrer"
           target="_blank"
           >rc</a
-        >: a lisp compiler that compiles code directly into ELF binaries without any dependencies
+        >: a lisp compiler written in Rust that compiles code directly into ELF binaries without any dependencies. It parses s-expressions and generates an IR. Small optimizations like constant folding are done and then the IR is translated into x64 ELF binaries.
+      </li>
+      <li>
+        <a
+          href="https://github.com/nireo/levelsql"
+          rel="noopener noreferrer"
+          target="_blank"
+          >levelsql</a
+        >: a barebones SQL implementation on top of leveldb it encodes rows and tables and stores them as key-value pairs.
       </li>
       <li>
         <a
@@ -102,7 +110,7 @@
           rel="noopener noreferrer"
           target="_blank"
           >gocry</a
-        >: a proof of concept ransomware built
+        >: a proof of concept ransomware 
       </li>
       <li>
         <a
@@ -118,7 +126,7 @@
           rel="noopener noreferrer"
           target="_blank"
           >karu</a
-        >: a bitcask style key-value store for linux
+        >: a bitcask style key-value store for linux written in C++ mainly done to learn what it's like to develop larger projects with C++.
       </li>
       <li>
         <a
@@ -139,19 +147,11 @@
       </li>
       <li>
         <a
-          href="https://github.com/nireo/levelsql"
-          rel="noopener noreferrer"
-          target="_blank"
-          >levelsql</a
-        >: a barebones SQL implementation on top of leveldb
-      </li>
-      <li>
-        <a
           href="https://github.com/nireo/sch"
           rel="noopener noreferrer"
           target="_blank"
           >sch</a
-        >: a small chat application written using tokio and rust
+        >: a small and fast chat application written using Tokio and Rust
       </li>
     </ul>
   </div>
