@@ -33,6 +33,14 @@
       </li>
       <li>
         <a
+          href="https://github.com/nireo/haystack"
+          rel="noopener noreferrer"
+          target="_blank"
+          >haystack</a
+        >: a distributed file system with an architecture similar to Facebook's Haystack. This entails a directory that is in this case a Raft cluster for added availability and reliability. The directory maps files to logical volumes which are large append-only files on disk that contain many smaller files. Clients ask the directory where to write files and where to read them, meaning the directory doesn't directly interact with stores. Replication is done using the idea that a single logical volume exists in many store servers and a single file is mapped to a single logical volume meaning a copy of the file is on N store servers.
+      </li>
+      <li>
+        <a
           href="https://github.com/nireo/mc"
           rel="noopener noreferrer"
           target="_blank"
