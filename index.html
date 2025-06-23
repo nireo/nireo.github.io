@@ -9,33 +9,26 @@
     <div class="content-container">
         <div class="nav front-text">
           <a href="/" class="link header-link">home</a>
+          <a href="/projects" class="link header-link">projects</a>
           <a class="link header-link" href="https://github.com/nireo" rel="noopener noreferrer"
             >github</a
           >
         </div>
         <main>
-            <p>Working with Go professionally. Passionate about big data systems, compilers, distributed systems, computer graphics, and Linux. Currently enjoy programming in Go, C, and Rust.</p>
-<h2 id="projects">projects</h2>
-<p>A collection of systems programming projects built for learning and experimentation.</p>
-<ul>
-<li><a href="https://github.com/nireo/haystack" target="_blank" rel="noopener noreferrer">haystack</a>: a distributed file system inspired by Facebook's Haystack architecture. Features a Raft-based directory cluster for high availability, mapping files to logical volumes stored as large append-only files. The directory coordinates client read/write operations without directly handling file storage, while replication ensures data durability across multiple store servers.</li>
-<li><a href="https://github.com/nireo/mc" target="_blank" rel="noopener noreferrer">mc</a>: a complete C compiler written in Go, featuring lexical analysis, parsing, intermediate representation generation, and x64 assembly code generation.</li>
-<li><a href="https://github.com/nireo/mci" target="_blank" rel="noopener noreferrer">mci</a>: a proof-of-concept distributed CI/CD pipeline service with web interface. An orchestrator distributes work to agents that execute YAML-defined pipelines within Docker containers like Alpine Linux.</li>
-<li><a href="https://github.com/nireo/serie" target="_blank" rel="noopener noreferrer">serie</a>: an embeddable time series database with a custom LSM tree optimized for time series queries. Uses delta-delta encoding for memory efficiency and includes HTTP API, consistent hashing for distribution, and a custom query language parser for data aggregation.</li>
-<li><a href="https://github.com/nireo/dcache" target="_blank" rel="noopener noreferrer">dcache</a>: a high-performance distributed in-memory cache built with Go. Uses gRPC for inter-node communication, Serf for cluster management, and Raft for distributed consensus.</li>
-<li><a href="https://github.com/nireo/distsql" target="_blank" rel="noopener noreferrer">distsql</a>: a distributed SQLite3 database with HTTP API and gRPC communication between nodes. Implements Raft consensus for data consistency across the cluster.</li>
-<li><a href="https://github.com/nireo/rc" target="_blank" rel="noopener noreferrer">rc</a>: a Lisp compiler written in Rust that generates standalone ELF binaries. Parses S-expressions, generates intermediate representation with optimizations like constant folding, and compiles directly to x64 machine code.</li>
-<li><a href="https://github.com/nireo/levelsql" target="_blank" rel="noopener noreferrer">levelsql</a>: a minimal SQL implementation built on top of LevelDB. Encodes relational data structures as key-value pairs, demonstrating how SQL can be layered over NoSQL storage engines.</li>
-<li><a href="https://github.com/nireo/sagasu" target="_blank" rel="noopener noreferrer">sagasu</a>: a lightweight service discovery tool featuring a clustered service registry. Provides basic functionality similar to HashiCorp Consul for microservice environments.</li>
-<li><a href="https://github.com/nireo/upfi" target="_blank" rel="noopener noreferrer">upfi</a>: a minimalist file hosting platform focusing on simplicity and ease of deployment.</li>
-<li><a href="https://github.com/nireo/gocry" target="_blank" rel="noopener noreferrer">gocry</a>: a proof-of-concept ransomware implementation for educational and security research purposes.</li>
-<li><a href="https://github.com/nireo/karu" target="_blank" rel="noopener noreferrer">karu</a>: a Bitcask-style key-value store for Linux written in C++. Built to explore large-scale C++ development patterns and persistent storage optimization.</li>
-<li><a href="https://github.com/nireo/stupidhttp" target="_blank" rel="noopener noreferrer">stupidhttp</a>: a HTTP server built from scratch in Go without using net/http. Implements a subset of HTTP/1.1 with HTTPS support, demonstrating protocol implementation fundamentals.</li>
-<li><a href="https://github.com/nireo/sch" target="_blank" rel="noopener noreferrer">sch</a>: a fast, lightweight chat application built with Rust and Tokio, showcasing asynchronous programming and real-time communication.</li>
-<li><a href="https://github.com/nireo/hashvis" target="_blank" rel="noopener noreferrer">hashvis</a>: a utility that generates unique ASCII art visualizations from file contents. Creates deterministic visual fingerprints by hashing file content to seed a random walk pattern on a grid, rendered as ASCII characters.</li>
-<li><a href="https://github.com/nireo/chibi" target="_blank" rel="noopener noreferrer">chibi</a>: a distributed SQL database implemented using only Go's standard library. Demonstrates fundamental database concepts without external dependencies.</li>
-</ul>
+            <p>Working with Go professionally. Passionate about big data systems, compilers, distributed systems, computer graphics, and Linux. Currently enjoy programming in Go, C, and Rust. I use neovim as my text editor and different ergonomic keyboards like the alice and chocofi.</p>
 
+            
+            <div class="blog-posts">
+                <h2>posts</h2>
+                <ul>
+                    
+                    <li>
+                        <a href="/blog/chocofi_flashing.html">23/06/25 - Initial impressions of the chocofi keyboard</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
         </main>
     </div>
 </body>
