@@ -6,16 +6,17 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <div>
-        <nav>
-          <a href="/">home</a>
-          <a href="/projects">projects</a>
-          <a href="https://github.com/nireo" rel="noopener noreferrer"
-            >github</a
-          >
-        </nav>
-        <main>
-            <h2 id="projects">projects</h2>
+    <div class="container">
+        <div class="content">
+            <nav>
+              <a href="/">home</a>
+              <a href="/projects">projects</a>
+              <a href="https://github.com/nireo" rel="noopener noreferrer"
+                >github</a
+              >
+            </nav>
+            <main>
+                <h2 id="projects">projects</h2>
 <p>A collection of systems programming projects built for learning and experimentation.</p>
 <ul>
 <li><a href="https://github.com/nireo/haystack">haystack</a>: a distributed file system inspired by Facebook's Haystack architecture. Features a Raft-based directory cluster for high availability, mapping files to logical volumes stored as large append-only files. The directory coordinates client read/write operations without directly handling file storage, while replication ensures data durability across multiple store servers.</li>
@@ -36,8 +37,9 @@
 <li><a href="https://github.com/nireo/simdcsv">simdcsv</a>: a fast C++ CSV parser utilizing simd instructions to speed up indexing a CSV file.</li>
 </ul>
 
-            
-        </main>
+                
+            </main>
+        </div>
     </div>
 </body>
 </html>
