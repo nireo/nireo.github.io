@@ -11,6 +11,7 @@
             <nav>
               <a href="/">home</a>
               <a href="/projects">projects</a>
+              <a href="/links">links</a>
               <a href="https://github.com/nireo" rel="noopener noreferrer"
                 >github</a
               >
@@ -19,6 +20,7 @@
                 <h2 id="projects">projects</h2>
 <p>A collection of systems programming projects built for learning and experimentation.</p>
 <ul>
+<li><a href="https://github.com/nireo/kukka">kukka</a>: a small and fast parser combinators library written in Rust. The library works by using static dispatch to avoid the runtime overhead of trait objects. The downside being longer compilation times and more complex type signatures.</li>
 <li><a href="https://github.com/nireo/haystack">haystack</a>: a distributed file system inspired by Facebook's Haystack architecture. Features a Raft-based directory cluster for high availability, mapping files to logical volumes stored as large append-only files. The directory coordinates client read/write operations without directly handling file storage, while replication ensures data durability across multiple store servers.</li>
 <li><a href="https://github.com/nireo/mc">mc</a>: a C compiler written in Go, featuring lexical analysis, parsing, intermediate representation generation, and x64 assembly code generation.</li>
 <li><a href="https://github.com/nireo/mci">mci</a>: a proof-of-concept distributed CI/CD pipeline service with web interface. An orchestrator distributes work to agents that execute YAML-defined pipelines within Docker containers like Alpine Linux.</li>
