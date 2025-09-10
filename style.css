@@ -1,27 +1,9 @@
 * {
   box-sizing: border-box;
-  font-family:
-    Menlo,
-    Monaco,
-    Lucida Console,
-    Liberation Mono,
-    DejaVu Sans Mono,
-    Bitstream Vera Sans Mono,
-    Courier New,
-    monospace,
-    serif !important;
 }
 html {
-  font-family:
-    a Menlo,
-    Monaco,
-    Lucida Console,
-    Liberation Mono,
-    DejaVu Sans Mono,
-    Bitstream Vera Sans Mono,
-    Courier New,
-    monospace,
-    serif;
+  font-family: sans-serif;
+  line-height: 1.4;
 }
 body {
   min-width: 320px;
@@ -34,7 +16,7 @@ body {
 }
 .links a {
   line-height: 10pt;
-  padding-right: 1rem;
+  margin-right: 1rem;
 }
 .container {
   display: table;
@@ -70,7 +52,7 @@ pre code {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 800px;
+  max-width: 960px;
   min-width: 300px;
   background-color: #111;
   padding: 0 20px;
@@ -98,15 +80,12 @@ h1 {
 }
 h2 {
   font-size: 26px;
-  font-weight: 700;
 }
 h3 {
   font-size: 20px;
-  font-weight: 700;
 }
 h4 {
   font-size: 16px;
-  font-weight: 700;
 }
 a {
   text-decoration: none;
