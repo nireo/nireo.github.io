@@ -7,16 +7,17 @@
 </head>
 <body>
     <div class="container">
+        <nav class="sidebar">
+            <div class="links">
+                <a href="/">home</a>
+                <a href="/projects">projects</a>
+                <a href="/links">links</a>
+                <a href="https://github.com/nireo" rel="noopener noreferrer" target="_blank">github</a>
+            </div>
+        </nav>
+        
         <div class="content">
-            <nav class="links">
-              <a href="/">home</a>
-              <a href="/projects">projects</a>
-              <a href="/links">links</a>
-              <a href="https://github.com/nireo" rel="noopener noreferrer"
-                >github</a
-              >
-            </nav>
-            <main>
+          <main>
                 <h2 id="projects">projects</h2>
 <p>A collection of systems programming projects built for learning and experimentation.</p>
 <ul>
@@ -29,10 +30,13 @@
 <li><a href="https://github.com/nireo/distsql">distsql</a>: a distributed SQLite3 database with HTTP API and gRPC communication between nodes. Implements Raft consensus for data consistency across the cluster.</li>
 <li><a href="https://github.com/nireo/rc">rc</a>: a Lisp compiler written in Rust that generates standalone ELF binaries. Parses S-expressions, generates intermediate representation with optimizations like constant folding, and compiles directly to x64 machine code. Without needing an assembler.</li>
 <li><a href="https://github.com/nireo/levelsql">levelsql</a>: a minimal SQL implementation built on top of LevelDB. Encodes relational data structures as key-value pairs, demonstrating how SQL can be layered over NoSQL storage engines.</li>
+<li><a href="https://github.com/nireo/upfi">upfi</a>: a minimalist file hosting platform focusing on simplicity and ease of deployment.</li>
 <li><a href="https://github.com/nireo/gocry">gocry</a>: a proof-of-concept ransomware implementation for educational and security research purposes.</li>
 <li><a href="https://github.com/nireo/karu">karu</a>: a Bitcask-style key-value store for Linux written in C++. Built to explore large-scale C++ development patterns and persistent storage optimization.</li>
 <li><a href="https://github.com/nireo/stupidhttp">stupidhttp</a>: a HTTP server built from scratch in Go without using net/http. Implements a subset of HTTP/1.1 with HTTPS support, demonstrating protocol implementation fundamentals.</li>
+<li><a href="https://github.com/nireo/sch">sch</a>: a fast, lightweight chat application built with Rust and Tokio, showcasing asynchronous programming and real-time communication.</li>
 <li><a href="https://github.com/nireo/hashvis">hashvis</a>: a utility that generates unique ASCII art visualizations from file contents. Creates deterministic visual fingerprints by hashing file content to seed a random walk pattern on a grid, rendered as ASCII characters.</li>
+<li><a href="https://github.com/nireo/chibi">chibi</a>: a distributed SQL database implemented using only Go's standard library. Demonstrates fundamental database concepts without external dependencies.</li>
 <li><a href="https://github.com/nireo/simdcsv">simdcsv</a>: a fast C++ CSV parser utilizing simd instructions to speed up indexing a CSV file.</li>
 </ul>
 
