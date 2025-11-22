@@ -20,21 +20,22 @@
                 
                 <h2 id="projects">projects</h2>
 <p>I mostly write toy projects to learn about different things and because programming is fun.</p>
-<h3 id="programming-languages-and-parsing">programming languages and parsing</h3>
-<ul>
-<li><a href="https://github.com/nireo/kukka">kukka</a>: a small and fast parser combinators library written in Rust. The library works by using static dispatch to avoid the runtime overhead of trait objects. The downside being longer compilation times and more complex type signatures. The library is mature enough to be able to easily parse for example JSON or CSV files.</li>
-<li><a href="https://github.com/nireo/mc">mc</a>: a C compiler written in Go, featuring lexical analysis, parsing, intermediate representation generation, and x64 assembly code generation.</li>
-<li><a href="https://github.com/nireo/rc">rc</a>: a Lisp compiler written in Rust that generates standalone ELF binaries. Parses S-expressions, generates intermediate representation with optimizations like constant folding, and compiles directly to x64 machine code. Without needing an assembler. The lisp is compiles is rather simplistic.</li>
-<li><a href="https://github.com/nireo/simdcsv">simdcsv</a>: a fast C++ CSV parser utilizing simd instructions to speed up indexing a CSV file. It uses a two-pass approach where the first pass identifies row and column boundaries using simd, and the second pass extracts the actual data.</li>
-</ul>
 <h3 id="security-and-cryptography">security and cryptography</h3>
 <ul>
+<li><a href="https://github.com/nireo/secp256k1">secp256k1</a>: implements basic secp256k1 signing and verifying. This also includes some optimizations like Jacobian coordinates and Montgomery representation to avoid costly division. It also implements deterministic nonces for signatures as defined by RFC6979. It is not fully resistant to side-channel attacks and that still needs to be improved.</li>
 <li><a href="https://github.com/nireo/pqxdh">pqxdh</a>: implementation of Post-Quantum Extended Diffie-Hellman and XEdDSA. The protocol extends the X3DH protocol with MLKEM to provide protection against quantum computers.</li>
 <li><a href="https://github.com/nireo/pch">pch</a>: an end-to-end encrypted chat that contains a X3DH and Double Ratchet implementation using cryptographic primitives from the Go standard library. The chat is self is built using bbolt for storage and GRPC for communication.</li>
 <li><a href="https://github.com/nireo/merkle">merkle</a>: merkle trees implemented in Go and C. It uses the SHA-256 hash function to create a binary merkle tree from a list of data blocks. It supports generating and verifying inclusion proofs for data blocks.</li>
 <li><a href="https://github.com/nireo/gocry">gocry</a>: a proof-of-concept ransomware implementation for educational and security research purposes.</li>
 <li><a href="https://github.com/nireo/lamportsig">lamportsig</a>: an implementation of Lamport signatures which is a one-time signature scheme based on hash functions.</li>
 <li><a href="https://github.com/nireo/sss">sss</a>: an implementation of Shamir's Secret Sharing scheme in Go. It allows splitting a secret into multiple shares, requiring a minimum number of shares to reconstruct the original secret. This is done by using polynomial interpolation over a finite field.</li>
+</ul>
+<h3 id="programming-languages-and-parsing">programming languages and parsing</h3>
+<ul>
+<li><a href="https://github.com/nireo/kukka">kukka</a>: a small and fast parser combinators library written in Rust. The library works by using static dispatch to avoid the runtime overhead of trait objects. The downside being longer compilation times and more complex type signatures. The library is mature enough to be able to easily parse for example JSON or CSV files.</li>
+<li><a href="https://github.com/nireo/mc">mc</a>: a C compiler written in Go, featuring lexical analysis, parsing, intermediate representation generation, and x64 assembly code generation.</li>
+<li><a href="https://github.com/nireo/rc">rc</a>: a Lisp compiler written in Rust that generates standalone ELF binaries. Parses S-expressions, generates intermediate representation with optimizations like constant folding, and compiles directly to x64 machine code. Without needing an assembler. The lisp is compiles is rather simplistic.</li>
+<li><a href="https://github.com/nireo/simdcsv">simdcsv</a>: a fast C++ CSV parser utilizing simd instructions to speed up indexing a CSV file. It uses a two-pass approach where the first pass identifies row and column boundaries using simd, and the second pass extracts the actual data.</li>
 </ul>
 <h3 id="distributed-systems-and-databases">distributed systems and databases</h3>
 <ul>
