@@ -5,7 +5,7 @@
   --text: #efefef;
   --text-muted: #8a9a8a;
   --heading: #b8c5d0;
-  --link: #90b8c8;
+  --link: #531ab6;
   --link-hover: #78b8b8;
   --accent-green: #7a9c8c;
   --border: #232323;
@@ -15,6 +15,12 @@
 body {
   font-family: sans-serif;
   font-size: 18px;
+  background: #fefcff;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
 }
 
 div.container {
@@ -30,7 +36,7 @@ div.container li {
 div.container,
 code,
 pre {
-  max-width: 850px;
+  max-width: 700px;
 }
 
 div.navbar {
@@ -52,8 +58,10 @@ div.post-date i {
 }
 h1,
 h2,
-h2 {
-  line-height: 1.2;
+h3,
+h4 {
+  line-height: 1;
+  color: #8f0075;
 }
 aside {
   margin-left: 20px;
