@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>nireo</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     
 </head>
 <body>
@@ -27,22 +27,21 @@
 <li><a href="https://github.com/nireo/pch">pch</a>: an end-to-end encrypted chat that contains a X3DH and Double Ratchet implementation using cryptographic primitives from the Go standard library. The chat is self is built using bbolt for storage and GRPC for communication.</li>
 <li><a href="https://github.com/nireo/merkle">merkle</a>: merkle trees implemented in Go and C. It uses the SHA-256 hash function to create a binary merkle tree from a list of data blocks. It supports generating and verifying inclusion proofs for data blocks.</li>
 <li><a href="https://github.com/nireo/gocry">gocry</a>: a proof-of-concept ransomware implementation for educational and security research purposes.</li>
-<li><a href="https://github.com/nireo/lamportsig">lamportsig</a>: an implementation of Lamport signatures which is a one-time signature scheme based on hash functions.</li>
-<li><a href="https://github.com/nireo/sss">sss</a>: an implementation of Shamir's Secret Sharing scheme in Go. It allows splitting a secret into multiple shares, requiring a minimum number of shares to reconstruct the original secret. This is done by using polynomial interpolation over a finite field.</li>
+<li><a href="https://github.com/nireo/crypto">crypto</a>: small cryptography projects like Sharmir's Secret Sharing, Lamport signatures and more. Mainly written in Go for learning.</li>
 </ul>
 <h3 id="programming-languages-and-parsing">programming languages and parsing</h3>
 <ul>
 <li><a href="https://github.com/nireo/kukka">kukka</a>: a small and fast parser combinators library written in Rust. The library works by using static dispatch to avoid the runtime overhead of trait objects. The downside being longer compilation times and more complex type signatures. The library is mature enough to be able to easily parse for example JSON or CSV files.</li>
+<li><a href="https://github.com/nireo/miniml">miniml</a>: a functional language written in Rust. Which implements Lambda Calculus. Very much in progress.</li>
 <li><a href="https://github.com/nireo/mc">mc</a>: a C compiler written in Go, featuring lexical analysis, parsing, intermediate representation generation, and x64 assembly code generation.</li>
 <li><a href="https://github.com/nireo/rc">rc</a>: a Lisp compiler written in Rust that generates standalone ELF binaries. Parses S-expressions, generates intermediate representation with optimizations like constant folding, and compiles directly to x64 machine code. Without needing an assembler. The lisp is compiles is rather simplistic.</li>
 <li><a href="https://github.com/nireo/simdcsv">simdcsv</a>: a fast C++ CSV parser utilizing simd instructions to speed up indexing a CSV file. It uses a two-pass approach where the first pass identifies row and column boundaries using simd, and the second pass extracts the actual data.</li>
 </ul>
 <h3 id="distributed-systems-and-databases">distributed systems and databases</h3>
 <ul>
-<li><a href="https://github.com/nireo/haystack">haystack</a>: a distributed file system inspired by Facebook's Haystack architecture. Features a Raft-based directory cluster for high availability, mapping files to logical volumes stored as large append-only files. The directory coordinates client read/write operations without directly handling file storage, while replication ensures data durability across multiple store servers.</li>
+<li><a href="https://github.com/nireo/haystack">haystack</a>: a distributed file system inspired by Facebook's Haystack architecture. Features a Raft-based directory cluster for high availability, mapping files to logical volumes stored as large append-only files. The directory coordinates client read/write operations without directly handling file storage, while replication ensures data durability across multiple store servers.distributed SQLite3 database.</li>
 <li><a href="https://github.com/nireo/serie">serie</a>: an embeddable time series database with a custom LSM tree optimized for time series queries. Uses delta-delta encoding for memory efficiency and includes HTTP API, and a custom query language parser for data aggregation.</li>
-<li><a href="https://github.com/nireo/dcache">dcache</a>: a distributed in-memory cache built with Go. Uses gRPC for inter-node communication, Serf for cluster management, and Raft for distributed consensus.</li>
-<li><a href="https://github.com/nireo/distsql">distsql</a>: a distributed SQLite3 database.</li>
+<li><a href="https://github.com/nireo/distsql">distsql</a>: a distributed consensus layer built on top of SQLITE3</li>
 <li><a href="https://github.com/nireo/levelsql">levelsql</a>: a minimal SQL implementation which encodes relation data as key-value pairs built on top of LevelDB.</li>
 </ul>
 <h3 id="random--fun">random / fun</h3>

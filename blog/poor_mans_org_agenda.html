@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nireo</title>
+    <link rel="stylesheet" href="../style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="/">home</a>
+            <a href="/projects">projects</a>
+            <a href="/links">links</a>
+            <a href="https://github.com/nireo" rel="noopener noreferrer" target="_blank">github</a>
+        </div>
+        
+        <div>
+            <main>
+                
+                <h2 id="poor-mans-org-agenda">poor man's org agenda</h2>
+<p>I always thought that Emacs' org-mode was excellent at keeping track of todos and the integration of possible todos into existing documents was very good. The problem is that you are forced to use Emacs, or rely of editor-specific plugins that are often overly complicated for my needs. Mainly, I want:</p>
+<ul>
+<li>The ability to take quick notes from the terminal without opening an editor</li>
+<li>To have notes organized by a given day</li>
+<li>To not use Emacs</li>
+<li>To embed todos into daily notes and overall todo management</li>
+<li>Tags to quickly search for specific todos or notes</li>
+</ul>
+<p>So I wrote a small program called <code>nt</code>. Just to address the things I want, in the way I want them to be. I have found this helpful while working on many projects and taking notes from meetings and keeping track of todos and possible ideas.</p>
+<h3 id="quickly-from-the-terminal">quickly from the terminal</h3>
+<p>I don't really want to open vim just to create a quick todo or add some small note. That is something I could easily do by using the terminal which I have open all the time. So I just designed something simple:</p>
+<pre><code>$ nt &quot;the solution to problem x was to do y&quot; -t work -t fix
+</code></pre>
+<p>Then I can easily search notes using <code>ripgrep</code> or something similar to find for example: &quot;oh this is what I needed to fix x&quot;. Alternatively, I could search based on the tag.</p>
+<h3 id="agenda-and-todos">agenda and todos</h3>
+<p>I want a simple view for the different todos I have related to the day that they're supposed to be done.</p>
+<pre><code>$ nt agenda
+
+2025-12-03
+  [5] finish the super cool presentation #school (due 2025-12-03) @ notes/2025/11/26-11-2025.md:13
+2025-12-07
+  [4] complete the diibadaaba assignment #school (due 2025-12-07) @ notes/2025/11/26-11-2025.md:11
+</code></pre>
+<p>Also basic things like:</p>
+<pre><code>$ nt done 5 # complete todo
+$ nt list # all todos 
+$ nt agenda -t school # for specific tag the agenda
+</code></pre>
+<p>The documents are mainly markdown so the todos are also checkboxes which can also be toggled when editing the file with an editor. The agenda can also filter out tasks internally.</p>
+<h3 id="daily-notes">daily notes</h3>
+<p>Sometimes I would like to take meeting notes in an editor, since taking a large amount of notes using commands isn't feasible. There exists <code>nt open</code> which takes in an optional date argument and defaults it for today. It reads the <code>$EDITOR</code> in your shell and opens the file using that. That way I can easily type whatever longer notes I need into a markdown file using the editor of my choice.</p>
+<h3 id="conclusion">conclusion</h3>
+<p>Is this better than org-mode? No. Should I use this? Probably not. Do I see the irony of complaining about complexity and also creating a somewhat large python script? Yes. The main thing is that the idea of actually having a separate editor for something that ultimately is quite simple seems unnecessary. Now, I have this editor agnostic version that can be run from the command line, and it will work in the future even if I decide to switch editors. Currently the notes are not synced, but that can be done using some other service and that is not the responsibility of the of script.</p>
+
+                
+                
+            </main>
+        </div>
+    </div>
+</body>
+</html>
