@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500&display=swap');
+:root {
+  --bg: #191919;
+  --fg: #BBBBBB;
+  --muted: #8E8E8E;
+  --muted-deep: #3D3839;
+  --accent: #6099C0;
+  --accent-strong: #61ABDA;
+  --accent-warm: #B77E64;
+  --accent-rose: #DE6E7C;
+}
 * {
   outline: 0;
   box-sizing: border-box !important;
@@ -6,19 +16,22 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-size: 16px !important;
+  font-size: 1.2rem;
+  overflow-wrap: break-word;
 }
 body {
-  background-color: #ededed;
-  color: #000;
+  background-color: var(--bg);
+  color: var(--fg);
   line-height: 1.2;
-  font-family: Inconsolata, serif;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+  font-family: sans-serif;
+}
+main, p, li, a {
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 div.container {
   display: flex;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   padding: 20px;
   gap: 40px;
@@ -35,46 +48,47 @@ div.navbar {
 div.navbar a {
   display: block;
   margin-bottom: 5px;
-  color: #355F7A;
+  color: var(--accent);
   text-decoration: none;
 }
 div.navbar a:hover {
-  color: #1E88C9;
+  color: var(--accent-strong);
 }
 main {
   flex: 1;
   max-width: 750px;
+  min-width: 0;
 }
 p, ul, ol, li {
   margin: 0 0 1em;
 }
 h1 {
-  color: #2F5E8B;
+  color: var(--accent);
   font-weight: 400;
   margin: 0 0 1rem;
   line-height: 1;
 }
 h2, h3 {
-  color: #3F6FA0;
+  color: var(--accent-strong);
   font-weight: 400;
   margin: 0 0 1rem;
   line-height: 1;
 }
 a {
-  color: #1E6FB8; 
+  color: var(--accent); 
   text-decoration: none;
   padding: 0 2px;
   transition: color 0.2s;
 }
 a:hover {
-  color: #0B4F8A;
+  color: var(--accent-strong);
 }
 li {
   margin-bottom: 10px;
 }
 .post-date,
 .date-span {
-  color: #6B7F8A;
+  color: var(--muted);
   display: inline-block;
   min-width: 100px;
   font-family: monospace;
@@ -84,18 +98,20 @@ pre {
   background: transparent;
   padding: 15px 0;
   overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
   border-radius: 0 !important;
 }
 code {
   font-family: "Inconsolata", monospace;
-  color: gray;
+  color: var(--muted);
   font-size: 14px;
 }
 p code,
 li code {
   padding: 2px 4px;
-  color: rgba(255, 255, 255, .85);
-  background-color: rgba(110, 118, 129, .35);
+  color: var(--fg);
+  background-color: var(--muted-deep);
   border-radius: 0;
 }
 @media only screen and (max-width: 600px) {
@@ -110,7 +126,7 @@ li code {
     top: 0;
     flex-direction: row;
     flex-wrap: wrap;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--muted-deep);
     padding-bottom: 15px;
     margin-bottom: 10px;
   }
