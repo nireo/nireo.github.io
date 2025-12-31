@@ -32,8 +32,10 @@ main, p, li, a {
 div.container {
   display: flex;
   width: 100%;
+  max-width: 980px;
   min-height: 100vh;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 40px 20px 20px;
   gap: 40px;
 }
 div.navbar {
@@ -58,6 +60,9 @@ main {
   flex: 1;
   max-width: 750px;
   min-width: 0;
+}
+.blog-posts {
+  margin-top: 2.2em;
 }
 p, ul, ol, li {
   margin: 0 0 1em;
@@ -85,6 +90,35 @@ a:hover {
 }
 li {
   margin-bottom: 10px;
+}
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0 0 1em;
+}
+.post-item {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--muted-deep);
+  transition: border-color 0.2s;
+}
+.post-item:first-child {
+  border-top: 1px solid var(--muted-deep);
+}
+.post-item:hover {
+  border-bottom-color: var(--accent-warm);
+}
+.post-title {
+  color: var(--fg);
+}
+.post-item:hover .post-title {
+  color: var(--accent-strong);
+}
+.post-date {
+  color: var(--muted);
 }
 .post-date,
 .date-span {
@@ -135,5 +169,10 @@ li code {
   }
   main {
     max-width: 100%;
+  }
+  .post-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
 }
