@@ -33,12 +33,11 @@
 <li><a href="https://github.com/nireo/kukka">kukka</a>: a small and fast parser combinators library written in Rust. The library works by using static dispatch to avoid the runtime overhead of trait objects. The downside being longer compilation times and more complex type signatures. The library is mature enough to be able to easily parse for example JSON or CSV files.</li>
 <li><a href="https://github.com/nireo/ampl">ampl</a>: A concurrent programming language implementing ideas from Erlang in a less functional way. Implemented in Zig.</li>
 <li><a href="https://github.com/nireo/mc">mc</a>: a C compiler written in Go, featuring lexical analysis, parsing, intermediate representation generation, and x64 assembly code generation.</li>
-<li><a href="https://github.com/nireo/rc">rc</a>: a Lisp compiler written in Rust that generates standalone ELF binaries. Parses S-expressions, generates intermediate representation with optimizations like constant folding, and compiles directly to x64 machine code. Without needing an assembler. The lisp is compiles is rather simplistic.</li>
 </ul>
 <h3 id="distributed-systems-and-databases">distributed systems and databases</h3>
 <ul>
 <li><a href="https://github.com/nireo/haystack">haystack</a>: a distributed file system inspired by Facebook's Haystack architecture. Features a Raft-based directory cluster for high availability, mapping files to logical volumes stored as large append-only files. The directory coordinates client read/write operations without directly handling file storage, while replication ensures data durability across multiple store servers.distributed SQLite3 database.</li>
-<li><a href="https://github.com/nireo/distsql">distsql</a>: a distributed consensus layer built on top of SQLITE3</li>
+<li><a href="https://github.com/nireo/distsql">distsql</a>: a distributed consensus layer built on top of SQLite3</li>
 <li><a href="https://github.com/nireo/levelsql">levelsql</a>: a minimal SQL implementation which encodes relation data as key-value pairs built on top of LevelDB.</li>
 </ul>
 <h3 id="random--fun">random / fun</h3>
