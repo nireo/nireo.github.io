@@ -1,34 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500&display=swap');
+
 :root {
-  --bg: #FFFFFF;
-  --fg: #1F2328;
-  --muted: #5E6772;
-  --muted-deep: #E3E7EE;
-  --accent: #1E5B99;
-  --accent-strong: #0F3F6E;
-  --accent-warm: #C27A3B;
-  --accent-rose: #B84B5A;
+  --text: #abb2bf;
+  --background: #111;
+  --bg: var(--background);
+  --fg: var(--text);
+  --string: #e96c75;
+  --keyword: #d19a66;
+  --type: #61afef;
+  --number: #c678dd;
+  --comment: #828997;
+  --code-background: #222;
+  --muted: #7c8596;
+  --muted-deep: #1b1f26;
+  --accent: var(--text);
+  --accent-strong: #e0e6f0;
+  --accent-warm: #c27a3b;
+  --accent-rose: #b84b5a;
 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: #494b53;
+    --background: #fafafa;
+    --string: #e45649;
+    --keyword: #986801;
+    --type: #4078f2;
+    --number: #a626a4;
+    --comment: #a0a1a7;
+    --code-background: #f4f4f4;
+    --muted: #5e6772;
+    --muted-deep: #e3e7ee;
+    --accent: var(--text);
+    --accent-strong: #1f2328;
+  }
+}
+
 * {
   outline: 0;
   box-sizing: border-box !important;
 }
-body, html {
+
+html {
+  font-family: sans-serif;
+  font-size: 1.25em;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+body {
   margin: 0;
   padding: 0;
-  font-size: 1.2rem;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+body,
+html {
   overflow-wrap: break-word;
 }
-body {
-  background-color: var(--bg);
-  color: var(--fg);
-  line-height: 1.2;
-  font-family: sans-serif;
-}
-main, p, li, a {
+
+main,
+p,
+li,
+a {
   overflow-wrap: anywhere;
   word-break: normal;
 }
+
 div.container {
   display: flex;
   width: 100%;
@@ -38,6 +78,7 @@ div.container {
   padding: 40px 20px 20px;
   gap: 40px;
 }
+
 div.navbar {
   position: sticky;
   display: flex;
@@ -47,51 +88,81 @@ div.navbar {
   height: fit-content;
   text-align: left;
 }
+
 div.navbar a {
   display: block;
   margin-bottom: 5px;
-  color: var(--accent);
+  color: var(--text);
   text-decoration: none;
 }
+
 div.navbar a:hover {
   color: var(--accent-strong);
 }
+
 main {
   flex: 1;
-  max-width: 750px;
+  max-width: 80ch;
   min-width: 0;
 }
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5 {
+  margin-top: 0.5ch;
+  margin-bottom: 0.5ch;
+}
+
+main h1 a,
+main h2 a,
+main h3 a,
+main h4 a,
+main h5 a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main p {
+  margin-top: 1ch;
+  margin-bottom: 1ch;
+}
+
+main ul,
+main ol {
+  margin-top: 0.5ch;
+  margin-bottom: 0.5ch;
+}
+
+main li {
+  margin-top: 0.25ch;
+  margin-bottom: 0.25ch;
+}
+
+main blockquote {
+  margin-top: 1ch;
+  margin-bottom: 1ch;
+}
+
+main img {
+  max-width: 50ch;
+  width: 100%;
+  margin: 1ch auto;
+  display: block;
+}
+
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 .blog-posts {
   margin-top: 2.4em;
   padding-top: 8px;
 }
-p, ul, ol, li {
-  margin: 0 0 1em;
-}
-h1 {
-  color: var(--accent);
-  font-weight: 400;
-  margin: 0 0 1rem;
-  line-height: 1;
-}
-h2, h3 {
-  color: var(--accent-strong);
-  font-weight: 400;
-  margin: 0 0 1rem;
-  line-height: 1;
-}
-a {
-  color: var(--accent); 
-  text-decoration: none;
-  padding: 0 2px;
-  transition: color 0.2s;
-}
-a:hover {
-  color: var(--accent-strong);
-}
-li {
-  margin-bottom: 10px;
-}
+
 .post-list {
   list-style: none;
   margin: 0;
@@ -100,11 +171,13 @@ li {
   flex-direction: column;
   gap: 8px;
 }
+
 .post-item {
   display: block;
   padding: 0;
   margin: 0;
 }
+
 .post-date {
   color: var(--muted);
   display: inline-block;
@@ -112,27 +185,33 @@ li {
   font-family: monospace;
   font-size: 0.82em;
 }
+
 .post-title {
   display: inline;
 }
+
 .date-span {
   display: inline-block;
   font-family: monospace;
   font-size: 0.82em;
 }
+
 pre {
-  background: transparent;
-  padding: 15px 0;
+  background-color: var(--code-background);
+  padding: 10px 5px;
   overflow: auto;
+  max-height: 70vh;
   white-space: pre-wrap;
   word-break: break-word;
   border-radius: 0 !important;
 }
+
 code {
   font-family: "Inconsolata", monospace;
   color: var(--muted);
   font-size: 14px;
 }
+
 p code,
 li code {
   padding: 2px 4px;
@@ -140,12 +219,14 @@ li code {
   background-color: var(--muted-deep);
   border-radius: 0;
 }
+
 @media only screen and (max-width: 600px) {
   div.container {
     flex-direction: column;
     padding: 15px;
     gap: 20px;
   }
+
   div.navbar {
     width: 100%;
     position: relative;
@@ -156,9 +237,11 @@ li code {
     padding-bottom: 15px;
     margin-bottom: 10px;
   }
+
   div.navbar a {
     margin-right: 15px;
   }
+
   main {
     max-width: 100%;
   }
