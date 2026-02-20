@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     
 </head>
-<body>
+<body class="projects-page">
     <div class="container">
         <div class="navbar">
             <a href="/">home</a>
@@ -17,40 +17,96 @@
         
         <div>
             <main>
-                
                 <h2 id="projects">projects</h2>
-<p>I mostly write toy projects to learn about different things and because programming is fun.</p>
-<h3 id="security-and-cryptography">security and cryptography</h3>
-<ul>
-    <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/newspeak">newspeak</a>: an end-to-end encrypted chat that implements Signal's Post-Quantum Extended Diffie-Hellman and Double ratchet written using Rust. The chat is built using <code>tonic</code> for gRPC, sqlite for storage, and <code>dalek</code> for implementing the protocol with secure cryptographic primitives. The chat uses a TUI built with <code>ratatui</code> to display messages.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/c25519">c25519</a>: A side-channel attack resistant Ed25519 implementation in C, also contains a SHA-512 implementation. Relatively fast and passes many different test vector sets fully.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/psync">psync</a>: a command-line tool that can sync files to a untrusted provider by encrypting files and hiding metadata like exact file count and file sizes. It uses ChaCha20-Poly1305 to encrypt files and to detect tampering and using Argon2id to derive encryption keys based on a password.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/secp256k1">secp256k1</a>: implements basic secp256k1 signing and verifying. This also includes some optimizations like Jacobian coordinates and Montgomery representation to avoid costly division. It also implements deterministic nonces for signatures as defined by RFC6979. It is not fully resistant to side-channel attacks and that still needs to be improved.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/hkdf">hkdf</a>: A self-contained header-only HKDF implementation in C. Contains SHA-256 and HMAC implementations.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/pqxdh">pqxdh</a>: implementation of Post-Quantum Extended Diffie-Hellman and XEdDSA. The protocol extends the X3DH protocol with MLKEM to provide protection against quantum computers.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/merkle">merkle</a>: merkle trees implemented in Go and C. It uses the SHA-256 hash function to create a binary merkle tree from a list of data blocks. It supports generating and verifying inclusion proofs for data blocks.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/gocry">gocry</a>: a proof-of-concept ransomware implementation for educational and security research purposes.</li>
-</ul>
-<h3 id="progra target="_blank" rel="noopener noreferrer"mming-languages-and-parsing">programming languages and parsing</h3>
-<ul>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/kukka">kukka</a>: a small and fast parser combinators library written in Rust. The library works by using static dispatch to avoid the runtime overhead of trait objects. The downside being longer compilation times and more complex type signatures. The library is mature enough to be able to easily parse for example JSON or CSV files.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/ampl">ampl</a>: A concurrent programming language implementing ideas from Erlang in a less functional way. Implemented in Zig.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/mc">mc</a>: a C compiler written in Go, featuring lexical analysis, parsing, intermediate representation generation, and x64 assembly code generation.</li>
-</ul>
-<h3 id="distributed-systems-a target="_blank" rel="noopener noreferrer"nd-databases">distributed systems and databases</h3>
-<ul>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/haystack">haystack</a>: a distributed file system inspired by Facebook's Haystack architecture. Features a Raft-based directory cluster for high availability, mapping files to logical volumes stored as large append-only files. The directory coordinates client read/write operations without directly handling file storage, while replication ensures data durability across multiple store servers.distributed SQLite3 database.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/distsql">distsql</a>: a distributed consensus layer built on top of SQLite3</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/levelsql">levelsql</a>: a minimal SQL implementation which encodes relation data as key-value pairs built on top of LevelDB.</li>
-</ul>
-<h3 id="ra target="_blank" rel="noopener noreferrer"ndom--fun">random / fun</h3>
-<ul>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/stupidhttp">stupidhttp</a>: a HTTP server built from scratch in Go without using net/http. Implements a subset of HTTP/1.1 with HTTPS support.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/hashvis">hashvis</a>: a utility that generates unique ASCII art visualizations from file contents.</li>
-</ul>
+                <p>I mostly write toy projects to learn different things and because programming is fun.</p>
 
-                
-                
+                <details class="project-category" id="security-and-cryptography">
+                    <summary>security and cryptography</summary>
+                    <ul class="project-list">
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/newspeak">newspeak</a></p>
+                            <p class="project-desc">End-to-end encrypted chat in Rust implementing Signal's Post-Quantum Extended Diffie-Hellman and Double Ratchet. Built with <code>tonic</code> for gRPC, SQLite for storage, <code>dalek</code> primitives, and a <code>ratatui</code> terminal UI.</p>
+                        </li>
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/c25519">c25519</a></p>
+                            <p class="project-desc">Side-channel attack resistant Ed25519 implementation in C that also includes SHA-512. It focuses on practical performance while passing a broad set of test vectors.</p>
+                        </li>
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/psync">psync</a></p>
+                            <p class="project-desc">Command-line sync tool for untrusted providers that encrypts files and hides metadata such as exact file count and file sizes. Uses ChaCha20-Poly1305 for encryption and Argon2id for key derivation.</p>
+                        </li>
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/secp256k1">secp256k1</a></p>
+                            <p class="project-desc">secp256k1 signing and verification implementation with Jacobian coordinates and Montgomery representation to reduce expensive operations. Includes deterministic RFC6979 nonces.</p>
+                        </li>
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/hkdf">hkdf</a></p>
+                            <p class="project-desc">Self-contained header-only HKDF implementation in C with SHA-256 and HMAC primitives included.</p>
+                        </li>
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/pqxdh">pqxdh</a></p>
+                            <p class="project-desc">Implementation of Post-Quantum Extended Diffie-Hellman and XEdDSA. Extends X3DH with ML-KEM to provide stronger resistance against future quantum attacks.</p>
+                        </li>
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/merkle">merkle</a></p>
+                            <p class="project-desc">Merkle tree implementations in Go and C using SHA-256, including generation and verification of inclusion proofs.</p>
+                        </li>
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/gocry">gocry</a></p>
+                            <p class="project-desc">Proof-of-concept ransomware implementation for educational and security research purposes.</p>
+                        </li>
+                    </ul>
+                </details>
+
+                <details class="project-category" id="programming-languages-and-parsing">
+                    <summary>programming languages and parsing</summary>
+                    <ul class="project-list">
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/kukka">kukka</a></p>
+                            <p class="project-desc">Small and fast parser combinator library in Rust that uses static dispatch to avoid trait-object overhead. Useful for building parsers for formats such as JSON and CSV.</p>
+                        </li>
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/ampl">ampl</a></p>
+                            <p class="project-desc">Concurrent programming language written in Zig that explores Erlang-inspired ideas with a less functional style.</p>
+                        </li>
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/mc">mc</a></p>
+                            <p class="project-desc">C compiler written in Go with lexical analysis, parsing, IR generation, and x64 assembly output.</p>
+                        </li>
+                    </ul>
+                </details>
+
+                <details class="project-category" id="distributed-systems-and-databases">
+                    <summary>distributed systems and databases</summary>
+                    <ul class="project-list">
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/haystack">haystack</a></p>
+                            <p class="project-desc">Distributed file system inspired by Facebook's Haystack architecture. Uses a Raft-based directory cluster to map files to append-only volumes and coordinates replication across store servers.</p>
+                        </li>
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/distsql">distsql</a></p>
+                            <p class="project-desc">Distributed consensus layer built on top of SQLite for coordinating state across nodes.</p>
+                        </li>
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/levelsql">levelsql</a></p>
+                            <p class="project-desc">Minimal SQL implementation that stores relational data as key-value pairs on LevelDB.</p>
+                        </li>
+                    </ul>
+                </details>
+
+                <details class="project-category" id="random-fun">
+                    <summary>random / fun</summary>
+                    <ul class="project-list">
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/stupidhttp">stupidhttp</a></p>
+                            <p class="project-desc">HTTP server built from scratch in Go without using <code>net/http</code>, implementing a subset of HTTP/1.1 with HTTPS support.</p>
+                        </li>
+                        <li class="project-row">
+                            <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/hashvis">hashvis</a></p>
+                            <p class="project-desc">Utility that generates unique ASCII art visualizations from file contents.</p>
+                        </li>
+                    </ul>
+                </details>
             </main>
         </div>
     </div>
