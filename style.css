@@ -16,6 +16,7 @@
 }
 
 body {
+  margin: 0;
   font-size: 16px;
   line-height: 1.4;
   font-family: "SF Mono", SFMono-Regular, ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -36,6 +37,7 @@ div.container {
   position: relative;
   width: min(100%, 72ch);
   min-height: 100vh;
+  min-height: 100dvh;
   margin: 0 auto;
   padding: 40px 20px 20px;
 }
