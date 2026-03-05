@@ -76,24 +76,67 @@ main {
 }
 
 .projects-page .project-category summary {
+  position: relative;
   padding: 0.65rem 0.8rem;
+  padding-left: 1.7rem;
   color: var(--heading);
   cursor: pointer;
   user-select: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.18s ease;
+  list-style: none;
 }
 
-.projects-page .project-category summary::marker {
-  color: #7f8fa2;
+.projects-page .project-category summary::-webkit-details-marker {
+  display: none;
+}
+
+.projects-page .project-category summary::before {
+  content: "";
+  position: absolute;
+  left: 0.82rem;
+  top: 50%;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-right: 1.5px solid #7f8fa2;
+  border-bottom: 1.5px solid #7f8fa2;
+  transform: translateY(-60%) rotate(45deg);
+  transition: transform 0.18s ease, border-color 0.18s ease;
 }
 
 .projects-page .project-category[open] summary {
-  border-bottom: 1px solid #26231d;
+  border-bottom-color: #26231d;
+}
+
+.projects-page .project-category.is-closing summary {
+  pointer-events: none;
+}
+
+.projects-page .project-category[open] summary::before {
+  transform: translateY(-40%) rotate(225deg);
+  border-color: #9aa9bc;
 }
 
 .projects-page .project-list {
   margin: 0;
   padding: 0.7rem 0.8rem 0.85rem;
   list-style: none;
+}
+
+.projects-page .project-category[open] .project-list {
+  animation: project-list-open 0.18s ease-out;
+}
+
+@keyframes project-list-open {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .projects-page .project-row {
@@ -109,11 +152,32 @@ main {
 
 .projects-page .project-top {
   margin: 0;
+  display: inline;
 }
 
 .projects-page .project-desc {
   margin: 0.35rem 0 0;
   line-height: normal;
+}
+
+.projects-page .project-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0 0 0.45rem;
+  vertical-align: middle;
+}
+
+.projects-page .project-tags span {
+  display: inline-block;
+  padding: 0.08rem 0.45rem;
+  border: 1px solid #2b281f;
+  border-radius: 999px;
+  background-color: #12110e;
+  color: #a9a59b;
+  font-size: 0.74rem;
+  line-height: 1.2;
 }
 
 .projects-page .project-top a {

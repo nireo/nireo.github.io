@@ -20,39 +20,47 @@
                 <h2 id="projects">projects</h2>
                 <p>I like doing recreational programming and just working on random things that interest me. Try recreational programming!</p>
 
-                <details class="project-category" id="security-and-cryptography">
+                <details class="project-category" id="security-and-cryptography" open>
                     <summary>security and cryptography</summary>
                     <ul class="project-list">
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/newspeak">newspeak</a></p>
+                            <p class="project-tags"><span>rust</span></p>
                             <p class="project-desc">End-to-end encrypted chat in Rust implementing Signal's Post-Quantum Extended Diffie-Hellman and Double Ratchet. Built with <code>tonic</code> for gRPC, SQLite for storage, <code>dalek</code> primitives, and a <code>ratatui</code> terminal UI.</p>
                         </li>
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/c25519">c25519</a></p>
+                            <p class="project-tags"><span>c</span></p>
                             <p class="project-desc">Side-channel attack resistant Ed25519 implementation in C that also includes SHA-512. It focuses on practical performance while passing a broad set of test vectors.</p>
                         </li>
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/psync">psync</a></p>
+                            <p class="project-tags"><span>go</span></p>
                             <p class="project-desc">Command-line sync tool for untrusted providers that encrypts files and hides metadata such as exact file count and file sizes. Uses ChaCha20-Poly1305 for encryption and Argon2id for key derivation.</p>
                         </li>
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/secp256k1">secp256k1</a></p>
+                            <p class="project-tags"><span>c</span></p>
                             <p class="project-desc">secp256k1 signing and verification implementation with Jacobian coordinates and Montgomery representation to reduce expensive operations. Includes deterministic RFC6979 nonces.</p>
                         </li>
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/hkdf">hkdf</a></p>
+                            <p class="project-tags"><span>c</span></p>
                             <p class="project-desc">Self-contained header-only HKDF implementation in C with SHA-256 and HMAC primitives included.</p>
                         </li>
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/pqxdh">pqxdh</a></p>
+                            <p class="project-tags"><span>go</span></p>
                             <p class="project-desc">Go library for Post-Quantum Extended Diffie-Hellman and XEdDSA. Extends X3DH with ML-KEM to provide stronger resistance against future quantum adversaries.</p>
                         </li>
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/merkle">merkle</a></p>
+                            <p class="project-tags"><span>go</span><span>c</span></p>
                             <p class="project-desc">Merkle tree implementations in Go and C using SHA-256, including generation and verification of inclusion proofs.</p>
                         </li>
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/gocry">gocry</a></p>
+                            <p class="project-tags"><span>go</span></p>
                             <p class="project-desc">Proof-of-concept ransomware implementation for educational and security research purposes.</p>
                         </li>
                     </ul>
@@ -63,14 +71,17 @@
                     <ul class="project-list">
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/kukka">kukka</a></p>
-                            <p class="project-desc">Small and fast parser combinator library in Rust that uses static dispatch to avoid trait-object overhead. It's mature enough to write parsers for JSON and CSV in a few lines.</p>
+                            <p class="project-tags"><span>rust</span></p>
+                            <p class="project-desc">Small and fast parser combinator library in Rust that uses static dispatch to avoid trait-object overhead. It's mature enough to write parsers for JSON and CSV in a few lines..</p>
                         </li>
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/ampl">ampl</a></p>
+                            <p class="project-tags"><span>zig</span></p>
                             <p class="project-desc">Concurrent programming language written in Zig that explores Erlang-inspired ideas with a less functional style.</p>
                         </li>
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/mc">mc</a></p>
+                            <p class="project-tags"><span>go</span></p>
                             <p class="project-desc">A simplistic C compiler written in Go with lexical analysis, parsing, IR generation, and x64 assembly output. Stopped working on this after getting a macbook.</p>
                         </li>
                     </ul>
@@ -81,14 +92,17 @@
                     <ul class="project-list">
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/haystack">haystack</a></p>
+                            <p class="project-tags"><span>go</span></p>
                             <p class="project-desc">Distributed file system inspired by Facebook's Haystack architecture. Uses a Raft-based directory cluster to map files to append-only volumes and coordinates replication across store servers.</p>
                         </li>
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/distsql">distsql</a></p>
+                            <p class="project-tags"><span>go</span></p>
                             <p class="project-desc">Distributed consensus layer built on top of SQLite for coordinating state across nodes.</p>
                         </li>
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/levelsql">levelsql</a></p>
+                            <p class="project-tags"><span>go</span></p>
                             <p class="project-desc">Minimal SQL implementation that stores relational data as key-value pairs on LevelDB.</p>
                         </li>
                     </ul>
@@ -99,16 +113,59 @@
                     <ul class="project-list">
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/dot">dot</a></p>
+                            <p class="project-tags"><span>go</span></p>
                             <p class="project-desc">A tiny easy-to-use dotfile manager built using in Go in a few hundred lines.</p>
                         </li>
                         <li class="project-row">
                             <p class="project-top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/nireo/hashvis">hashvis</a></p>
-                            <p class="project-desc">Utility that generates unique ASCII art visualizations from file contents.</p>
+                            <p class="project-tags"><span>c</span></p>
+                            <p class="project-desc">Small command line utility that generates unique ASCII art based on file contents written in C.</p>
                         </li>
                     </ul>
                 </details>
             </main>
         </div>
     </div>
+
+    <script>
+        (() => {
+            const categories = document.querySelectorAll('.projects-page .project-category');
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            categories.forEach((category) => {
+                const summary = category.querySelector('summary');
+                const list = category.querySelector('.project-list');
+                if (!summary || !list) return;
+
+                summary.addEventListener('click', (event) => {
+                    if (!category.open || reduceMotion || category.classList.contains('is-closing')) return;
+
+                    event.preventDefault();
+                    category.classList.add('is-closing');
+
+                    const animation = list.animate(
+                        [
+                            { opacity: 1, transform: 'translateY(0)' },
+                            { opacity: 0, transform: 'translateY(-4px)' }
+                        ],
+                        {
+                            duration: 170,
+                            easing: 'ease-in',
+                            fill: 'forwards'
+                        }
+                    );
+
+                    animation.onfinish = () => {
+                        category.open = false;
+                        category.classList.remove('is-closing');
+                        list.style.opacity = '';
+                        list.style.transform = '';
+                    };
+
+                    animation.oncancel = animation.onfinish;
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
