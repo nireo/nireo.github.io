@@ -13,14 +13,25 @@
   --link-hover: #a6b5c8;
   --code-text: #b0b0b0;
   --code-string: #8fa18f;
+  --page-bg: radial-gradient(circle at top, #181611 0%, var(--bg) 55%);
+  --panel-border: #26231d;
+  --panel-border-strong: #26231d;
+  --panel-bg: #14130f;
+  --row-border: #22201a;
+  --tag-border: #2b281f;
+  --tag-bg: #12110e;
+  --tag-text: #a9a59b;
+  --project-toggle: #7f8fa2;
+  --project-toggle-open: #9aa9bc;
+  --project-link-underline: #6f7f93;
 }
 
 body {
   margin: 0;
   font-size: 16px;
   line-height: normal;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: radial-gradient(circle at top, #181611 0%, var(--bg) 55%);
+  font-family: "IBM Plex Mono", "Iosevka Term", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  background: var(--page-bg);
   color: var(--text);
 }
 
@@ -70,9 +81,9 @@ main {
 
 .projects-page .project-category {
   margin: 0 0 1rem;
-  border: 1px solid #26231d;
+  border: 1px solid var(--panel-border);
   border-radius: 8px;
-  background-color: #14130f;
+  background-color: var(--panel-bg);
 }
 
 .projects-page .project-category summary {
@@ -98,14 +109,14 @@ main {
   top: 50%;
   width: 0.42rem;
   height: 0.42rem;
-  border-right: 1.5px solid #7f8fa2;
-  border-bottom: 1.5px solid #7f8fa2;
+  border-right: 1.5px solid var(--project-toggle);
+  border-bottom: 1.5px solid var(--project-toggle);
   transform: translateY(-60%) rotate(45deg);
   transition: transform 0.18s ease, border-color 0.18s ease;
 }
 
 .projects-page .project-category[open] summary {
-  border-bottom-color: #26231d;
+  border-bottom-color: var(--panel-border);
 }
 
 .projects-page .project-category.is-closing summary {
@@ -114,7 +125,7 @@ main {
 
 .projects-page .project-category[open] summary::before {
   transform: translateY(-40%) rotate(225deg);
-  border-color: #9aa9bc;
+  border-color: var(--project-toggle-open);
 }
 
 .projects-page .project-list {
@@ -142,7 +153,7 @@ main {
 .projects-page .project-row {
   margin: 0;
   padding: 0.45rem 0 0.8rem;
-  border-bottom: 1px solid #22201a;
+  border-bottom: 1px solid var(--row-border);
 }
 
 .projects-page .project-row:last-child {
@@ -172,10 +183,10 @@ main {
 .projects-page .project-tags span {
   display: inline-block;
   padding: 0.08rem 0.45rem;
-  border: 1px solid #2b281f;
+  border: 1px solid var(--tag-border);
   border-radius: 999px;
-  background-color: #12110e;
-  color: #a9a59b;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
   font-size: 0.74rem;
   line-height: 1.2;
 }
@@ -183,7 +194,7 @@ main {
 .projects-page .project-top a {
   text-decoration: underline;
   text-underline-offset: 0.14em;
-  text-decoration-color: #6f7f93;
+  text-decoration-color: var(--project-link-underline);
 }
 
 main > :first-child {
@@ -205,7 +216,7 @@ pre {
   white-space: pre-wrap;
   word-break: break-word;
   background-color: var(--bg-soft);
-  border: 1px solid #26231d;
+  border: 1px solid var(--panel-border-strong);
   border-radius: 8px;
 }
 
@@ -238,6 +249,36 @@ a:visited {
 
 a:hover {
   color: var(--link-hover);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --bg: #f3efe2;
+    --bg-soft: #e8e2d1;
+    --text: #2d4051;
+    --heading: #21425d;
+    --link: #3c6890;
+    --link-visited: #5b6f86;
+    --link-hover: #1f4e75;
+    --code-text: #314555;
+    --code-string: #6d7f4a;
+    --page-bg:
+      linear-gradient(180deg, rgba(110, 145, 176, 0.16), rgba(110, 145, 176, 0) 220px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0, rgba(255, 255, 255, 0.18) 1px, transparent 1px, transparent 24px),
+      linear-gradient(rgba(255, 255, 255, 0.14) 0, rgba(255, 255, 255, 0.14) 1px, transparent 1px, transparent 24px),
+      var(--bg);
+    --panel-border: #c3b9a5;
+    --panel-border-strong: #a89a82;
+    --panel-bg: #f8f4e8;
+    --row-border: #d4cab8;
+    --tag-border: #c3b9a5;
+    --tag-bg: #ebe4d4;
+    --tag-text: #4b5f71;
+    --project-toggle: #3c6890;
+    --project-toggle-open: #1f4e75;
+    --project-link-underline: #7d9ab5;
+  }
 }
 
 @media only screen and (max-width: 1120px) {
