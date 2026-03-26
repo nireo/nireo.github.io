@@ -3,6 +3,7 @@
 <head>
     <title>nireo</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body class="projects-page">
     <div class="container">
@@ -17,31 +18,33 @@
             <main>
                 
                 <h2 id="projects">projects</h2>
-<p>I mostly write toy projects to learn about different things and because programming is fun.</p>
+<p>I like doing recreational programming and just working on random things that interest me. Try recreational programming!</p>
 <h3 id="security-and-cryptography">security and cryptography</h3>
 <ul>
-<li><a href="https://github.com/nireo/newspeak" target="_blank" rel="noopener noreferrer">newspeak</a>: an end-to-end encrypted chat that implements Signal&#39;s Post-Quantum Extended Diffie-Hellman and Double ratchet written using Rust. The chat is built using <code>tonic</code> for gRPC, sqlite for storage, and <code>dalek</code> for implementing the protocol with secure cryptographic primitives.</li>
-<li><a href="https://github.com/nireo/secp256k1" target="_blank" rel="noopener noreferrer">secp256k1</a>: implements basic secp256k1 signing and verifying. This also includes some optimizations like Jacobian coordinates and Montgomery representation to avoid costly division. It also implements deterministic nonces for signatures as defined by RFC6979. It is not fully resistant to side-channel attacks and that still needs to be improved.</li>
-<li><a href="https://github.com/nireo/pqxdh" target="_blank" rel="noopener noreferrer">pqxdh</a>: implementation of Post-Quantum Extended Diffie-Hellman and XEdDSA. The protocol extends the X3DH protocol with MLKEM to provide protection against quantum computers.</li>
-<li><a href="https://github.com/nireo/merkle" target="_blank" rel="noopener noreferrer">merkle</a>: merkle trees implemented in Go and C. It uses the SHA-256 hash function to create a binary merkle tree from a list of data blocks. It supports generating and verifying inclusion proofs for data blocks.</li>
-<li><a href="https://github.com/nireo/gocry" target="_blank" rel="noopener noreferrer">gocry</a>: a proof-of-concept ransomware implementation for educational and security research purposes.</li>
+<li><a href="https://github.com/nireo/c25519" target="_blank" rel="noopener noreferrer">c25519</a>: Side-channel attack resistant Ed25519 implementation in C that also includes SHA-512. It focuses on practical performance with generally good results, while passing a broad set of test vectors.</li>
+<li><a href="https://github.com/nireo/newspeak" target="_blank" rel="noopener noreferrer">newspeak</a>: End-to-end encrypted chat in Rust implementing Signal&#39;s Post-Quantum Extended Diffie-Hellman and Double Ratchet. Built with <code>tonic</code> for gRPC, SQLite for storage, <code>dalek</code> primitives, and a <code>ratatui</code> terminal UI.</li>
+<li><a href="https://github.com/nireo/secp256k1" target="_blank" rel="noopener noreferrer">secp256k1</a>: secp256k1 signing and verification implementation with Jacobian coordinates and Montgomery representation to reduce expensive operations. Includes deterministic RFC6979 nonces.</li>
+<li><a href="https://github.com/nireo/hkdf" target="_blank" rel="noopener noreferrer">hkdf</a>: Self-contained header-only HKDF implementation in C with SHA-256 and HMAC primitives included.</li>
+<li><a href="https://github.com/nireo/pqxdh" target="_blank" rel="noopener noreferrer">pqxdh</a>: Go library for Post-Quantum Extended Diffie-Hellman and XEdDSA. Extends X3DH with ML-KEM to provide stronger resistance against future quantum adversaries.</li>
+<li><a href="https://github.com/nireo/merkle" target="_blank" rel="noopener noreferrer">merkle</a>: Merkle tree implementations in Go and C using SHA-256, including generation and verification of inclusion proofs.</li>
+<li><a href="https://github.com/nireo/schnorr" target="_blank" rel="noopener noreferrer">schnorr</a>: Schnorr signatures implemented over secp256k1 curve in 100 lines of Python. Serves as an educational implementation without dependencies (related to math).</li>
+<li><a href="https://github.com/nireo/gocry" target="_blank" rel="noopener noreferrer">gocry</a>: Proof-of-concept ransomware implementation for educational and security research purposes.</li>
 </ul>
 <h3 id="programming-languages-and-parsing">programming languages and parsing</h3>
 <ul>
-<li><a href="https://github.com/nireo/kukka" target="_blank" rel="noopener noreferrer">kukka</a>: a small and fast parser combinators library written in Rust. The library works by using static dispatch to avoid the runtime overhead of trait objects. The downside being longer compilation times and more complex type signatures. The library is mature enough to be able to easily parse for example JSON or CSV files.</li>
-<li><a href="https://github.com/nireo/ampl" target="_blank" rel="noopener noreferrer">ampl</a>: A concurrent programming language implementing ideas from Erlang in a less functional way. Implemented in Zig.</li>
-<li><a href="https://github.com/nireo/mc" target="_blank" rel="noopener noreferrer">mc</a>: a C compiler written in Go, featuring lexical analysis, parsing, intermediate representation generation, and x64 assembly code generation.</li>
+<li><a href="https://github.com/nireo/kukka" target="_blank" rel="noopener noreferrer">kukka</a>: Small and fast parser combinator library in Rust that uses static dispatch to avoid trait-object overhead. It&#39;s mature enough to write parsers for JSON and CSV in a few lines.</li>
+<li><a href="https://github.com/nireo/mc" target="_blank" rel="noopener noreferrer">mc</a>: A simplistic C compiler written in Go with lexical analysis, parsing, IR generation, and x64 assembly output. Stopped working on this after getting a macbook.</li>
 </ul>
 <h3 id="distributed-systems-and-databases">distributed systems and databases</h3>
 <ul>
-<li><a href="https://github.com/nireo/haystack" target="_blank" rel="noopener noreferrer">haystack</a>: a distributed file system inspired by Facebook&#39;s Haystack architecture. Features a Raft-based directory cluster for high availability, mapping files to logical volumes stored as large append-only files. The directory coordinates client read/write operations without directly handling file storage, while replication ensures data durability across multiple store servers.distributed SQLite3 database.</li>
-<li><a href="https://github.com/nireo/distsql" target="_blank" rel="noopener noreferrer">distsql</a>: a distributed consensus layer built on top of SQLite3</li>
-<li><a href="https://github.com/nireo/levelsql" target="_blank" rel="noopener noreferrer">levelsql</a>: a minimal SQL implementation which encodes relation data as key-value pairs built on top of LevelDB.</li>
+<li><a href="https://github.com/nireo/haystack" target="_blank" rel="noopener noreferrer">haystack</a>: Distributed file system inspired by Facebook&#39;s Haystack architecture. Uses a Raft-based directory cluster to map files to append-only volumes and coordinates replication across store servers.</li>
+<li><a href="https://github.com/nireo/distsql" target="_blank" rel="noopener noreferrer">distsql</a>: Distributed consensus layer built on top of SQLite for coordinating state across nodes.</li>
+<li><a href="https://github.com/nireo/levelsql" target="_blank" rel="noopener noreferrer">levelsql</a>: Minimal SQL implementation that stores relational data as key-value pairs on LevelDB.</li>
 </ul>
 <h3 id="random-fun">random / fun</h3>
 <ul>
-<li><a href="https://github.com/nireo/stupidhttp" target="_blank" rel="noopener noreferrer">stupidhttp</a>: a HTTP server built from scratch in Go without using net/http. Implements a subset of HTTP/1.1 with HTTPS support.</li>
-<li><a href="https://github.com/nireo/hashvis" target="_blank" rel="noopener noreferrer">hashvis</a>: a utility that generates unique ASCII art visualizations from file contents.</li>
+<li><a href="https://github.com/nireo/dot" target="_blank" rel="noopener noreferrer">dot</a>: A tiny easy-to-use dotfile manager built using in Go in a few hundred lines.</li>
+<li><a href="https://github.com/nireo/hashvis" target="_blank" rel="noopener noreferrer">hashvis</a>: Small command line utility that generates unique ASCII art based on file contents written in C.</li>
 </ul>
 
                 

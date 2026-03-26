@@ -309,24 +309,3 @@ hr {
   color: var(--heading);
   font-family: var(--font-mono);
 }
-
-@media only screen and (max-width: 1120px) {
-  div.container {
-    padding: 15px;
-  }
-
-  div.navbar {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem 1rem;
-    margin-bottom: 0.6rem;
-  }
-
-  div.navbar a {
-    font-size: 1.15rem;
-  }
-
-  main {
-    max-width: 100%;
-  }
-}
