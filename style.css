@@ -4,34 +4,38 @@
 
 :root {
   color-scheme: dark;
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-mono: Menlo, "DejaVu Sans Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  --bg: #050505;
-  --bg-soft: #090909;
-  --text: #b0b0b0;
-  --heading: #ffffff;
-  --link: #788ca0;
-  --link-visited: #788ca0;
-  --link-hover: #a0b3c6;
-  --code-text: #b0b0b0;
-  --code-string: #8fa18f;
-  --page-bg: radial-gradient(circle at top, #111111 0%, var(--bg) 58%);
-  --panel-border: #1a1a1a;
-  --panel-border-strong: #303030;
-  --panel-bg: #141414;
-  --row-border: #1a1a1a;
-  --tag-border: #303030;
-  --tag-bg: #141414;
-  --tag-text: #666666;
-  --project-toggle: #666666;
-  --project-toggle-open: #a0a0a0;
-  --project-link-underline: #444444;
+  --font-sans: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bg: #181616;
+  --bg-soft: #1D1C19;
+  --text: #c5c9c5;
+  --heading: #c8c093;
+  --link: #7fb4ca;
+  --link-visited: #938aa9;
+  --link-hover: #7aa89f;
+  --code-text: #c5c9c5;
+  --code-string: #8a9a7b;
+  --page-bg: var(--bg);
+  --panel-border: #222222;
+  --panel-border-strong: #2d4f67;
+  --panel-bg: #1D1C19;
+  --row-border: #222222;
+  --tag-border: #2d4f67;
+  --tag-bg: #1D1C19;
+  --tag-text: #a6a69c;
+  --project-toggle: #a6a69c;
+  --project-toggle-open: #c8c093;
+  --project-link-underline: #2d4f67;
 }
 
 body {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.4;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 10px;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
   font-family: var(--font-sans);
   background: var(--page-bg);
   color: var(--text);
