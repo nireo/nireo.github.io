@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  max-width: 780px;
+  max-width: 860px;
   margin: 40px auto;
   padding: 0 10px;
   font-size: 17px;
@@ -36,15 +36,25 @@ div.navbar {
 }
 
 div.navbar a {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  text-decoration: none;
+}
+
+div.navbar a:hover {
+  text-decoration: underline;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   margin: 1.5rem 0 0.6rem;
   line-height: 1.2;
-  font-family: "New York", "Iowan Old Style", Georgia, serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
   color: #eeeeee;
 }
 
@@ -71,11 +81,15 @@ main > :first-child {
 
 a {
   color: #7fb4ca;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:visited {
   color: #938aa9;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 img {
@@ -94,8 +108,8 @@ pre {
   overflow: auto;
   white-space: pre-wrap;
   word-break: break-word;
-  background-color: #1d1c19;
-  border: 1px solid #2a2a2a;
+  background-color: #24211f;
+  border-radius: 8px;
 }
 
 :not(pre) > code {
