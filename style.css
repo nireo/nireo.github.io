@@ -75,6 +75,34 @@ li {
   margin: 0.2rem 0;
 }
 
+.projects-page .selected-projects {
+  margin: 1.5rem 0 2rem;
+}
+
+.projects-page .featured-project {
+  padding: 1rem 0;
+  border-top: 1px solid #2d4f67;
+}
+
+.projects-page .featured-project:first-of-type {
+  padding-top: 0.35rem;
+  border-top: none;
+}
+
+.projects-page .featured-project h4 {
+  margin: 0 0 0.35rem;
+}
+
+.projects-page .project-meta {
+  margin: 0 0 0.4rem;
+  color: #a6a69c;
+  font-size: 0.95rem;
+}
+
+.projects-page .featured-project p:last-child {
+  margin-bottom: 0;
+}
+
 main > :first-child {
   margin-top: 0;
 }
