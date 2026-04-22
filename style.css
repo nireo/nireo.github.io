@@ -3,29 +3,59 @@
 }
 
 :root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-bg: #1c1917;
+  --color-fg: #b4bdc3;
+  --color-heading: #cad0d4;
+  --color-muted: #a1938c;
+  --color-link: #6099c0;
+  --color-link-visited: #b279a7;
+  --color-surface: #25211f;
+  --color-surface-strong: #302b29;
+  --color-rule: #685f5a;
   color-scheme: dark;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #f0edec;
+    --color-fg: #2c363c;
+    --color-heading: #2c363c;
+    --color-muted: #6a5549;
+    --color-link: #286486;
+    --color-link-visited: #88507d;
+    --color-surface: #ebe7e6;
+    --color-surface-strong: #ddd6d3;
+    --color-rule: #a4968f;
+    color-scheme: light;
+  }
+}
+
 html {
-  background-color: #181616;
+  background-color: var(--color-bg);
 }
 
 body {
   max-width: 860px;
   margin: 40px auto;
   padding: 0 10px;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.4;
   font-weight: 400;
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--font-mono);
   font-style: normal;
-  color: #c5c9c5;
-  background-color: #181616;
+  color: var(--color-fg);
+  background-color: var(--color-bg);
 }
 
 div.container,
 main {
   width: 100%;
+}
+
+div.container {
+  position: relative;
 }
 
 div.navbar {
@@ -37,8 +67,8 @@ div.navbar {
 
 div.navbar a {
   font-size: 1.1rem;
-  font-weight: 600;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-family: var(--font-mono);
   text-decoration: none;
 }
 
@@ -54,8 +84,8 @@ h5,
 h6 {
   margin: 1.5rem 0 0.6rem;
   line-height: 1.2;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-  color: #eeeeee;
+  font-family: var(--font-mono);
+  color: var(--color-heading);
 }
 
 p,
@@ -81,7 +111,7 @@ li {
 
 .projects-page .featured-project {
   padding: 1rem 0;
-  border-top: 1px solid #2d4f67;
+  border-top: 1px solid var(--color-rule);
 }
 
 .projects-page .featured-project:first-of-type {
@@ -95,7 +125,7 @@ li {
 
 .projects-page .project-meta {
   margin: 0 0 0.4rem;
-  color: #a6a69c;
+  color: var(--color-muted);
   font-size: 0.95rem;
 }
 
@@ -108,16 +138,20 @@ main > :first-child {
 }
 
 a {
-  color: #7fb4ca;
+  color: var(--color-link);
   text-decoration: none;
 }
 
 a:visited {
-  color: #938aa9;
+  color: var(--color-link-visited);
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+a[href^="/blog/"] {
+  font-family: var(--font-mono);
 }
 
 img {
@@ -128,7 +162,7 @@ img {
 
 pre,
 code {
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--font-mono);
 }
 
 pre {
@@ -136,19 +170,19 @@ pre {
   overflow: auto;
   white-space: pre-wrap;
   word-break: break-word;
-  background-color: #24211f;
+  background-color: var(--color-surface);
   border-radius: 8px;
 }
 
 :not(pre) > code {
   padding: 0.05rem 0.25rem;
-  background-color: #1d1c19;
+  background-color: var(--color-surface-strong);
 }
 
 hr {
   margin: 1.5rem 0;
   border: none;
-  border-top: 1px solid #2d4f67;
+  border-top: 1px solid var(--color-rule);
 }
 
 .reference-marker {
@@ -156,7 +190,7 @@ hr {
 }
 
 .reference-marker a {
-  color: #a6a69c;
+  color: var(--color-muted);
 }
 
 .references {
@@ -165,6 +199,22 @@ hr {
 
 .references p {
   margin: 0 0 0.45rem;
+}
+
+@media (min-width: 1200px) {
+  div.navbar {
+    position: absolute;
+    top: 0;
+    right: calc(100% + 2rem);
+    width: max-content;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    gap: 0.35rem;
+    margin: 0;
+    text-align: right;
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 640px) {
