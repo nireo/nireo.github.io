@@ -4,6 +4,7 @@
 
 :root {
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", Times, serif;
   --font-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --color-bg: #1c1917;
   --color-fg: #b4bdc3;
@@ -37,13 +38,13 @@ html {
 }
 
 body {
-  max-width: 860px;
+  max-width: 720px;
   margin: 40px auto;
   padding: 0 10px;
   font-size: 18px;
   line-height: 1.4;
   font-weight: 400;
-  font-family: var(--font-mono);
+  font-family: var(--font-serif);
   font-style: normal;
   color: var(--color-fg);
   background-color: var(--color-bg);
@@ -148,10 +149,6 @@ a:visited {
 
 a:hover {
   text-decoration: underline;
-}
-
-a[href^="/blog/"] {
-  font-family: var(--font-mono);
 }
 
 img {
