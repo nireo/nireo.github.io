@@ -81,6 +81,11 @@ div.navbar a:hover {
   text-decoration: underline;
 }
 
+div.navbar .fingerprint {
+  margin-left: auto;
+  word-break: break-word;
+}
+
 h1,
 h2,
 h3,
