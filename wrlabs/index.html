@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wr.labs — Deep Telemetry Analysis for League of Legends</title>
+    <meta name="description" content="An advanced telemetry analysis model for League of Legends. Uncovering non-obvious game-state relationships and win probability dynamics.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+                    <rect x="15" y="15" width="70" height="70" rx="12" stroke="currentColor" stroke-width="8"/>
+                    <path d="M 35 65 L 65 35" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="65" cy="65" r="6" fill="currentColor"/>
+                </svg>
+                wr.labs
+            </a>
+            <nav class="main-nav">
+                <a href="stats.html">Stats</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About Us</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="training-status-pill fade-in">
+                        <span class="status-pulse-dot"></span>
+                        <span class="status-pill-text">We are in the process of optimizing model performance and gathering more data</span>
+                    </div>
+                    <h1 class="hero-title fade-in" style="font-size: 44px; margin-top: 16px;">Accurate game analysis based on modern deep learning techniques.</h1>
+                    <p class="hero-subtitle fade-in delay-1">
+                        wr.labs analyzes game data deeply to find accurate win rates for items based on large amounts of training data.
+                    </p>
+                    <div class="hero-cta fade-in delay-2">
+                        <a href="stats.html" class="btn btn-primary">View Stats</a>
+                        <a href="pricing.html" class="btn btn-secondary">View Pricing</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual fade-in delay-4">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="terminal-title">wr_engine_stream.log</div>
+                        </div>
+                        <div class="terminal-body" id="terminal-output">
+                            <div class="terminal-line"><span class="t-comment"># Connecting to live match telemetry stream...</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section id="technology" class="section border-top bg-subtle">
+            <div class="container grid-2">
+                <div class="section-info">
+                    <h2 class="section-title">Deep Item Winrates</h2>
+                    <p class="section-description">
+                        Looking at raw item win rates is inaccurate, as the win rate of an item is highly dependent on the state of the game when it is purchased.
+                    </p>
+                    <p class="section-description">
+                        wr.labs resolves this by utilizing machine learning to adjust for gold levels, game duration, and player coordinates at the frame of purchase, while looking at the effect of the item purchase on the result of the game.
+                    </p>
+                    <p class="section-description">
+                        Our modeling builds upon and improves academic foundations in MOBA winner prediction, specifically optimizing methodologies introduced by C. H. Ke et al. on <a href="https://doi.org/10.1109/CoG51982.2022.9893647" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: underline;">team fight modeling</a> and D.-H. Kim et al. on <a href="https://doi.org/10.1109/CoG47356.2020.9231878" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: underline;">confidence-calibrated winner predictors</a>.
+                    </p>
+                </div>
+                <div class="nn-graphic-minimal">
+                    <svg class="nn-svg" viewBox="0 0 400 300" width="100%" height="100%">
+                        <!-- Connective Edges -->
+                        <!-- Input layer to Hidden layer -->
+                        <line x1="60" y1="80" x2="200" y2="50" class="nn-edge-minimal" />
+                        <line x1="60" y1="80" x2="200" y2="110" class="nn-edge-minimal" />
+                        <line x1="60" y1="80" x2="200" y2="170" class="nn-edge-minimal" />
+                        <line x1="60" y1="80" x2="200" y2="230" class="nn-edge-minimal" />
+
+                        <line x1="60" y1="150" x2="200" y2="50" class="nn-edge-minimal" />
+                        <line x1="60" y1="150" x2="200" y2="110" class="nn-edge-minimal" />
+                        <line x1="60" y1="150" x2="200" y2="170" class="nn-edge-minimal" />
+                        <line x1="60" y1="150" x2="200" y2="230" class="nn-edge-minimal" />
+
+                        <line x1="60" y1="220" x2="200" y2="50" class="nn-edge-minimal" />
+                        <line x1="60" y1="220" x2="200" y2="110" class="nn-edge-minimal" />
+                        <line x1="60" y1="220" x2="200" y2="170" class="nn-edge-minimal" />
+                        <line x1="60" y1="220" x2="200" y2="230" class="nn-edge-minimal" />
+
+                        <!-- Hidden layer to Output layer -->
+                        <line x1="200" y1="50" x2="340" y2="150" class="nn-edge-minimal" />
+                        <line x1="200" y1="110" x2="340" y2="150" class="nn-edge-minimal" />
+                        <line x1="200" y1="170" x2="340" y2="150" class="nn-edge-minimal" />
+                        <line x1="200" y1="230" x2="340" y2="150" class="nn-edge-minimal" />
+
+                        <!-- Nodes -->
+                        <!-- Input Layer -->
+                        <circle cx="60" cy="80" r="5" class="nn-node-minimal nn-node-flash-1" />
+                        <circle cx="60" cy="150" r="5" class="nn-node-minimal" />
+                        <circle cx="60" cy="220" r="5" class="nn-node-minimal nn-node-flash-2" />
+
+                        <!-- Hidden Layer -->
+                        <circle cx="200" cy="50" r="5" class="nn-node-minimal nn-node-flash-3" />
+                        <circle cx="200" cy="110" r="5" class="nn-node-minimal" />
+                        <circle cx="200" cy="170" r="5" class="nn-node-minimal nn-node-flash-1" />
+                        <circle cx="200" cy="230" r="5" class="nn-node-minimal" />
+
+                        <!-- Output Layer -->
+                        <circle cx="340" cy="150" r="5" class="nn-node-minimal nn-node-flash-2" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Calibration Section -->
+        <section id="calibration" class="section border-top">
+            <div class="container grid-2">
+                <div class="section-info">
+                    <h2 class="section-title">Post-Training Calibration</h2>
+                    <p class="section-description">
+                        In modeling complex game-state relationships, accuracy is only half the battle. A model must also be calibrated.
+                    </p>
+                    <p class="section-description">
+                        When wr.labs indicates a team has a <strong>70% chance of winning</strong>, it means that across thousands of identical game states, the leading team will go on to win <strong>exactly 70%</strong> of those games. 
+                    </p>
+                    <p class="section-description">
+                        We apply advanced mathematical calibration post-training to align our raw neural predictions with empirical match outcomes, minimizing error down to a tight 1–2% variance.
+                    </p>
+                </div>
+                
+                <div class="calibration-graphic">
+                    <div class="calibration-container">
+                        <div class="cal-header">Win Probability Confidence vs. Actual Win Rate</div>
+                        <div class="graph-area">
+                            <!-- SVG minimal calibration curve -->
+                            <svg class="cal-svg" viewBox="0 0 200 200">
+                                <!-- Ideal line -->
+                                <line x1="20" y1="180" x2="180" y2="20" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-dasharray="4"/>
+                                <!-- Calibration curve (calibrated & squiggly) -->
+                                <path d="M 20,180 Q 45,165 60,138 T 100,105 T 140,58 T 180,20" fill="none" stroke="#ffffff" stroke-width="3" />
+                                <!-- Points wiggling around the curve -->
+                                <circle cx="20" cy="180" r="3" fill="#ffffff"/>
+                                <circle cx="45" cy="162" r="3" fill="#ffffff"/>
+                                <circle cx="60" cy="138" r="3" fill="#ffffff"/>
+                                <circle cx="80" cy="122" r="3" fill="#ffffff"/>
+                                <circle cx="100" cy="105" r="3" fill="#ffffff"/>
+                                <circle cx="120" cy="82" r="3" fill="#ffffff"/>
+                                <circle cx="140" cy="58" r="3" fill="#ffffff"/>
+                                <circle cx="160" cy="35" r="3" fill="#ffffff"/>
+                                <circle cx="180" cy="20" r="3" fill="#ffffff"/>
+                            </svg>
+                            <div class="label-x">Model Confidence</div>
+                            <div class="label-y">Empirical Win Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+                    <rect x="15" y="15" width="70" height="70" rx="12" stroke="currentColor" stroke-width="8"/>
+                    <path d="M 35 65 L 65 35" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="65" cy="65" r="6" fill="currentColor"/>
+                </svg>
+                wr.labs
+            </div>
+            <div class="footer-links">
+                <a href="stats.html">Stats</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About Us</a>
+                <a href="#" id="open-terms">Terms &amp; Conditions</a>
+                <a href="#" id="open-privacy">Privacy Policy</a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 wr.labs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Native Modals for Terms and Privacy -->
+    <dialog id="modal-terms" class="legal-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Terms of Service</h2>
+                <button class="close-modal" autofocus>&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing or using wr.labs, you agree to comply with these Terms of Service. If you do not agree, please do not use our services.</p>
+                
+                <h3>2. Use Restrictions</h3>
+                <p>All data, model estimates, win rates, and telemetry analysis provided on this website are for your personal, non-commercial use only. You agree not to scrape, copy, repurpose, redistribute, or use this information on any other website, game tracker, or application service without our prior written consent.</p>
+                
+                <h3>3. Intellectual Property</h3>
+                <p>All design elements, analysis software, and statistical reports are the intellectual property of wr.labs. League of Legends is a registered trademark of Riot Games, Inc. wr.labs is an independent project and is not affiliated with Riot Games.</p>
+                
+                <h3>4. Disclaimer of Warranty</h3>
+                <p>Our analytics are provided "as is" without warranty of any kind. We are not liable for any matchmaking losses, decisions, or damages resulting from the use of our model outputs.</p>
+                <p class="last-updated">Last Updated: June 11, 2026</p>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="modal-privacy" class="legal-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <button class="close-modal" autofocus>&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>1. Account Information</h3>
+                <p>We collect account details that you explicitly provide to us, such as your email address when registering, subscribing, or contacting our team.</p>
+                
+                <h3>2. Gameplay Data</h3>
+                <p>We collect and process your League of Legends related telemetry, including games played, champions played, item builds, and performance metrics to generate game-state analysis and stats.</p>
+                
+                <h3>3. Data Usage</h3>
+                <p>Your information is used solely to provide and improve the wr.labs models and analysis tools. We do not sell or share your personal data with third-party advertisers.</p>
+                <p class="last-updated">Last Updated: June 11, 2026</p>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html>

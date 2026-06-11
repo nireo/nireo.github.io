@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wr.labs — Login</title>
+    <meta name="description" content="Sign in to your wr.labs account. Telemetry analytics and deep game state modeling.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+                    <rect x="15" y="15" width="70" height="70" rx="12" stroke="currentColor" stroke-width="8"/>
+                    <path d="M 35 65 L 65 35" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="65" cy="65" r="6" fill="currentColor"/>
+                </svg>
+                wr.labs
+            </a>
+            <nav class="main-nav">
+                <a href="stats.html">Stats</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About Us</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline nav-active">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="login-main">
+        <div class="login-container">
+            <div class="login-card-wrapper">
+                <!-- Coming Soon Overlay -->
+                <div class="coming-soon-overlay">
+                    <div class="overlay-badge">Private Beta</div>
+                    <h2>Coming Soon</h2>
+                    <p>Public release is currently in development. Access is restricted to active research contributors.</p>
+                    <a href="index.html" class="btn btn-outline" style="margin-top: 16px;">Back to Home</a>
+                </div>
+
+                <!-- Grayed out Login Card -->
+                <div class="login-card">
+                    <div class="login-header text-center">
+                        <h3>Sign in to wr.labs</h3>
+                        <p>Enter your credentials to access the telemetry dashboard.</p>
+                    </div>
+                    <form onsubmit="return false;" class="login-form">
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" placeholder="name@example.com" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="••••••••" disabled>
+                        </div>
+                        <button class="btn btn-primary w-100" style="margin-top: 8px;" disabled>Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+                    <rect x="15" y="15" width="70" height="70" rx="12" stroke="currentColor" stroke-width="8"/>
+                    <path d="M 35 65 L 65 35" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="65" cy="65" r="6" fill="currentColor"/>
+                </svg>
+                wr.labs
+            </div>
+            <div class="footer-links">
+                <a href="stats.html">Stats</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About Us</a>
+                <a href="#" id="open-terms">Terms &amp; Conditions</a>
+                <a href="#" id="open-privacy">Privacy Policy</a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 wr.labs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Native Modals for Terms and Privacy -->
+    <dialog id="modal-terms" class="legal-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Terms of Service</h2>
+                <button class="close-modal" autofocus>&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing or using wr.labs, you agree to comply with these Terms of Service. If you do not agree, please do not use our services.</p>
+                
+                <h3>2. Use Restrictions</h3>
+                <p>All data, model estimates, win rates, and telemetry analysis provided on this website are for your personal, non-commercial use only. You agree not to scrape, copy, repurpose, redistribute, or use this information on any other website, game tracker, or application service without our prior written consent.</p>
+                
+                <h3>3. Intellectual Property</h3>
+                <p>All design elements, analysis software, and statistical reports are the intellectual property of wr.labs. League of Legends is a registered trademark of Riot Games, Inc. wr.labs is an independent project and is not affiliated with Riot Games.</p>
+                
+                <h3>4. Disclaimer of Warranty</h3>
+                <p>Our analytics are provided "as is" without warranty of any kind. We are not liable for any matchmaking losses, decisions, or damages resulting from the use of our model outputs.</p>
+                <p class="last-updated">Last Updated: June 11, 2026</p>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="modal-privacy" class="legal-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <button class="close-modal" autofocus>&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>1. Account Information</h3>
+                <p>We collect account details that you explicitly provide to us, such as your email address when registering, subscribing, or contacting our team.</p>
+                
+                <h3>2. Gameplay Data</h3>
+                <p>We collect and process your League of Legends related telemetry, including games played, champions played, item builds, and performance metrics to generate game-state analysis and stats.</p>
+                
+                <h3>3. Data Usage</h3>
+                <p>Your information is used solely to provide and improve the wr.labs models and analysis tools. We do not sell or share your personal data with third-party advertisers.</p>
+                <p class="last-updated">Last Updated: June 11, 2026</p>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html>

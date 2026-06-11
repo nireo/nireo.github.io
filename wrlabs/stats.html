@@ -1,0 +1,2309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wr.labs — Champion Statistics</title>
+    <meta name="description" content="View deep telemetry-modeled champion win rates, pick rates, and performance benchmarks.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+                    <rect x="15" y="15" width="70" height="70" rx="12" stroke="currentColor" stroke-width="8"/>
+                    <path d="M 35 65 L 65 35" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="65" cy="65" r="6" fill="currentColor"/>
+                </svg>
+                wr.labs
+            </a>
+            <nav class="main-nav">
+                <a href="stats.html" class="nav-active">Stats</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About Us</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="stats-main-padding">
+        <!-- Stats Table Section -->
+        <section class="section" style="padding-top: 10px;">
+            <div class="container">
+                <!-- Search & Filters -->
+                <div class="stats-controls fade-in">
+                    <div class="controls-top-row">
+                        <input type="text" id="champion-search" placeholder="Search champions...">
+                        <a href="item-analysis.html" class="btn btn-outline" id="item-analysis-btn">Deep Item Analysis <span class="btn-badge">Soon</span></a>
+                        <div class="patch-selector-container">
+                            <label for="patch-select" class="patch-label">Patch</label>
+                            <select id="patch-select" class="patch-dropdown">
+                                <option value="26.12">26.12</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="role-selector">
+                        <button class="role-btn active" data-role="all">All Roles</button>
+                        <button class="role-btn" data-role="top">Top</button>
+                        <button class="role-btn" data-role="jungle">Jungle</button>
+                        <button class="role-btn" data-role="mid">Mid</button>
+                        <button class="role-btn" data-role="bottom">Bottom</button>
+                        <button class="role-btn" data-role="support">Support</button>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="table-container fade-in delay-1">
+                    <table class="stats-table" id="champion-table">
+                        <thead>
+                            <tr>
+                                <th class="rank-col">Rank</th>
+                                <th>Champion</th>
+                                <th class="role-col-header">Role</th>
+                                <th class="rate-col">Win Rate</th>
+                                <th class="rate-col">Pick Rate</th>
+                                <th class="rate-col">Ban Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-role="bottom">
+                                <td class="rank-col">1</td>
+                                <td class="champ-col"><strong>Karthus</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">55.61%</td>
+                                <td class="rate-col">0.95%</td>
+                                <td class="rate-col">1.44%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">2</td>
+                                <td class="champ-col"><strong>Gragas</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">55.28%</td>
+                                <td class="rate-col">0.42%</td>
+                                <td class="rate-col">1.02%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">3</td>
+                                <td class="champ-col"><strong>Senna</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">55.05%</td>
+                                <td class="rate-col">15.99%</td>
+                                <td class="rate-col">16.31%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">4</td>
+                                <td class="champ-col"><strong>Kayle</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">54.17%</td>
+                                <td class="rate-col">0.65%</td>
+                                <td class="rate-col">4.46%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">5</td>
+                                <td class="champ-col"><strong>Seraphine</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">53.93%</td>
+                                <td class="rate-col">1.75%</td>
+                                <td class="rate-col">8.09%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">6</td>
+                                <td class="champ-col"><strong>Teemo</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">53.74%</td>
+                                <td class="rate-col">0.57%</td>
+                                <td class="rate-col">7.17%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">7</td>
+                                <td class="champ-col"><strong>Xerath</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">53.65%</td>
+                                <td class="rate-col">1.05%</td>
+                                <td class="rate-col">6.01%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">8</td>
+                                <td class="champ-col"><strong>Anivia</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">53.62%</td>
+                                <td class="rate-col">0.81%</td>
+                                <td class="rate-col">4.55%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">9</td>
+                                <td class="champ-col"><strong>Taric</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">53.59%</td>
+                                <td class="rate-col">1.30%</td>
+                                <td class="rate-col">0.12%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">10</td>
+                                <td class="champ-col"><strong>Rek'Sai</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">53.52%</td>
+                                <td class="rate-col">3.02%</td>
+                                <td class="rate-col">2.16%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">11</td>
+                                <td class="champ-col"><strong>Zed</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">53.39%</td>
+                                <td class="rate-col">0.47%</td>
+                                <td class="rate-col">26.83%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">12</td>
+                                <td class="champ-col"><strong>Aurelion Sol</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">53.32%</td>
+                                <td class="rate-col">0.55%</td>
+                                <td class="rate-col">0.75%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">13</td>
+                                <td class="champ-col"><strong>Darius</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">53.20%</td>
+                                <td class="rate-col">0.60%</td>
+                                <td class="rate-col">13.67%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">14</td>
+                                <td class="champ-col"><strong>Lux</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">53.20%</td>
+                                <td class="rate-col">0.95%</td>
+                                <td class="rate-col">2.21%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">15</td>
+                                <td class="champ-col"><strong>Hwei</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">53.19%</td>
+                                <td class="rate-col">1.41%</td>
+                                <td class="rate-col">3.14%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">16</td>
+                                <td class="champ-col"><strong>Galio</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">53.10%</td>
+                                <td class="rate-col">1.05%</td>
+                                <td class="rate-col">1.24%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">17</td>
+                                <td class="champ-col"><strong>Swain</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">52.81%</td>
+                                <td class="rate-col">0.89%</td>
+                                <td class="rate-col">1.85%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">18</td>
+                                <td class="champ-col"><strong>Nilah</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">52.73%</td>
+                                <td class="rate-col">1.44%</td>
+                                <td class="rate-col">2.80%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">19</td>
+                                <td class="champ-col"><strong>Garen</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">52.66%</td>
+                                <td class="rate-col">0.46%</td>
+                                <td class="rate-col">7.83%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">20</td>
+                                <td class="champ-col"><strong>Veigar</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">52.64%</td>
+                                <td class="rate-col">0.90%</td>
+                                <td class="rate-col">0.73%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">21</td>
+                                <td class="champ-col"><strong>Quinn</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">52.58%</td>
+                                <td class="rate-col">1.02%</td>
+                                <td class="rate-col">1.67%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">22</td>
+                                <td class="champ-col"><strong>Rammus</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">52.53%</td>
+                                <td class="rate-col">1.59%</td>
+                                <td class="rate-col">3.92%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">23</td>
+                                <td class="champ-col"><strong>Bel'Veth</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">52.44%</td>
+                                <td class="rate-col">2.22%</td>
+                                <td class="rate-col">4.29%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">24</td>
+                                <td class="champ-col"><strong>Riven</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">52.44%</td>
+                                <td class="rate-col">1.50%</td>
+                                <td class="rate-col">4.53%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">25</td>
+                                <td class="champ-col"><strong>Sylas</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">52.35%</td>
+                                <td class="rate-col">1.50%</td>
+                                <td class="rate-col">13.78%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">26</td>
+                                <td class="champ-col"><strong>Singed</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">52.34%</td>
+                                <td class="rate-col">2.76%</td>
+                                <td class="rate-col">0.84%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">27</td>
+                                <td class="champ-col"><strong>Syndra</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">52.27%</td>
+                                <td class="rate-col">6.80%</td>
+                                <td class="rate-col">4.54%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">28</td>
+                                <td class="champ-col"><strong>Ivern</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">52.26%</td>
+                                <td class="rate-col">0.93%</td>
+                                <td class="rate-col">0.64%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">29</td>
+                                <td class="champ-col"><strong>Senna</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">52.24%</td>
+                                <td class="rate-col">7.14%</td>
+                                <td class="rate-col">16.56%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">30</td>
+                                <td class="champ-col"><strong>Lissandra</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">52.22%</td>
+                                <td class="rate-col">0.66%</td>
+                                <td class="rate-col">3.63%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">31</td>
+                                <td class="champ-col"><strong>Nasus</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">52.22%</td>
+                                <td class="rate-col">1.64%</td>
+                                <td class="rate-col">4.93%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">32</td>
+                                <td class="champ-col"><strong>Leona</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">52.22%</td>
+                                <td class="rate-col">8.16%</td>
+                                <td class="rate-col">7.88%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">33</td>
+                                <td class="champ-col"><strong>Amumu</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">52.20%</td>
+                                <td class="rate-col">0.49%</td>
+                                <td class="rate-col">1.51%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">34</td>
+                                <td class="champ-col"><strong>Xayah</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">52.13%</td>
+                                <td class="rate-col">3.47%</td>
+                                <td class="rate-col">0.31%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">35</td>
+                                <td class="champ-col"><strong>Cassiopeia</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">52.08%</td>
+                                <td class="rate-col">0.82%</td>
+                                <td class="rate-col">2.93%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">36</td>
+                                <td class="champ-col"><strong>Wukong</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">52.07%</td>
+                                <td class="rate-col">1.32%</td>
+                                <td class="rate-col">1.67%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">37</td>
+                                <td class="champ-col"><strong>Kayle</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">52.06%</td>
+                                <td class="rate-col">2.64%</td>
+                                <td class="rate-col">4.46%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">38</td>
+                                <td class="champ-col"><strong>Vladimir</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">52.06%</td>
+                                <td class="rate-col">1.64%</td>
+                                <td class="rate-col">10.08%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">39</td>
+                                <td class="champ-col"><strong>Cho'Gath</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">51.94%</td>
+                                <td class="rate-col">0.76%</td>
+                                <td class="rate-col">1.00%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">40</td>
+                                <td class="champ-col"><strong>Heimerdinger</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">51.88%</td>
+                                <td class="rate-col">1.37%</td>
+                                <td class="rate-col">1.48%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">41</td>
+                                <td class="champ-col"><strong>Amumu</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">51.85%</td>
+                                <td class="rate-col">1.72%</td>
+                                <td class="rate-col">1.42%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">42</td>
+                                <td class="champ-col"><strong>Rell</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">51.83%</td>
+                                <td class="rate-col">3.73%</td>
+                                <td class="rate-col">0.83%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">43</td>
+                                <td class="champ-col"><strong>Vel'Koz</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">51.81%</td>
+                                <td class="rate-col">1.34%</td>
+                                <td class="rate-col">2.57%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">44</td>
+                                <td class="champ-col"><strong>Gragas</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">51.79%</td>
+                                <td class="rate-col">0.87%</td>
+                                <td class="rate-col">0.97%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">45</td>
+                                <td class="champ-col"><strong>Brand</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">51.78%</td>
+                                <td class="rate-col">3.48%</td>
+                                <td class="rate-col">13.85%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">46</td>
+                                <td class="champ-col"><strong>Vladimir</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">51.74%</td>
+                                <td class="rate-col">5.27%</td>
+                                <td class="rate-col">10.17%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">47</td>
+                                <td class="champ-col"><strong>Zilean</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">51.63%</td>
+                                <td class="rate-col">2.72%</td>
+                                <td class="rate-col">1.53%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">48</td>
+                                <td class="champ-col"><strong>Ziggs</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">51.58%</td>
+                                <td class="rate-col">1.81%</td>
+                                <td class="rate-col">0.46%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">49</td>
+                                <td class="champ-col"><strong>Twisted Fate</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">51.56%</td>
+                                <td class="rate-col">5.21%</td>
+                                <td class="rate-col">0.32%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">50</td>
+                                <td class="champ-col"><strong>Diana</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">51.52%</td>
+                                <td class="rate-col">4.04%</td>
+                                <td class="rate-col">7.77%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">51</td>
+                                <td class="champ-col"><strong>Xerath</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">51.51%</td>
+                                <td class="rate-col">5.25%</td>
+                                <td class="rate-col">6.13%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">52</td>
+                                <td class="champ-col"><strong>Taliyah</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">51.50%</td>
+                                <td class="rate-col">0.50%</td>
+                                <td class="rate-col">0.54%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">53</td>
+                                <td class="champ-col"><strong>Fizz</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">51.47%</td>
+                                <td class="rate-col">5.56%</td>
+                                <td class="rate-col">8.71%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">54</td>
+                                <td class="champ-col"><strong>Fiddlesticks</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">51.47%</td>
+                                <td class="rate-col">0.62%</td>
+                                <td class="rate-col">1.41%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">55</td>
+                                <td class="champ-col"><strong>Ziggs</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">51.44%</td>
+                                <td class="rate-col">0.79%</td>
+                                <td class="rate-col">0.58%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">56</td>
+                                <td class="champ-col"><strong>Malphite</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">51.43%</td>
+                                <td class="rate-col">6.98%</td>
+                                <td class="rate-col">20.53%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">57</td>
+                                <td class="champ-col"><strong>Kled</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">51.41%</td>
+                                <td class="rate-col">1.75%</td>
+                                <td class="rate-col">1.03%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">58</td>
+                                <td class="champ-col"><strong>Poppy</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">51.41%</td>
+                                <td class="rate-col">2.03%</td>
+                                <td class="rate-col">2.76%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">59</td>
+                                <td class="champ-col"><strong>Nidalee</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">51.40%</td>
+                                <td class="rate-col">3.32%</td>
+                                <td class="rate-col">0.91%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">60</td>
+                                <td class="champ-col"><strong>Illaoi</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">51.39%</td>
+                                <td class="rate-col">2.57%</td>
+                                <td class="rate-col">4.25%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">61</td>
+                                <td class="champ-col"><strong>Tryndamere</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">51.38%</td>
+                                <td class="rate-col">3.22%</td>
+                                <td class="rate-col">2.33%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">62</td>
+                                <td class="champ-col"><strong>Tahm Kench</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">51.37%</td>
+                                <td class="rate-col">2.97%</td>
+                                <td class="rate-col">2.57%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">63</td>
+                                <td class="champ-col"><strong>Warwick</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">51.36%</td>
+                                <td class="rate-col">2.92%</td>
+                                <td class="rate-col">1.80%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">64</td>
+                                <td class="champ-col"><strong>Aatrox</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">51.34%</td>
+                                <td class="rate-col">2.26%</td>
+                                <td class="rate-col">7.36%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">65</td>
+                                <td class="champ-col"><strong>Wukong</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">51.34%</td>
+                                <td class="rate-col">4.75%</td>
+                                <td class="rate-col">1.56%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">66</td>
+                                <td class="champ-col"><strong>Janna</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">51.34%</td>
+                                <td class="rate-col">3.64%</td>
+                                <td class="rate-col">1.33%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">67</td>
+                                <td class="champ-col"><strong>Tristana</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">51.32%</td>
+                                <td class="rate-col">6.59%</td>
+                                <td class="rate-col">1.93%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">68</td>
+                                <td class="champ-col"><strong>Naafiri</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">51.31%</td>
+                                <td class="rate-col">2.51%</td>
+                                <td class="rate-col">35.05%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">69</td>
+                                <td class="champ-col"><strong>Ahri</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">51.27%</td>
+                                <td class="rate-col">9.76%</td>
+                                <td class="rate-col">5.38%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">70</td>
+                                <td class="champ-col"><strong>Evelynn</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">51.26%</td>
+                                <td class="rate-col">2.65%</td>
+                                <td class="rate-col">3.41%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">71</td>
+                                <td class="champ-col"><strong>Ornn</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">51.22%</td>
+                                <td class="rate-col">4.16%</td>
+                                <td class="rate-col">1.06%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">72</td>
+                                <td class="champ-col"><strong>Zyra</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">51.21%</td>
+                                <td class="rate-col">1.00%</td>
+                                <td class="rate-col">2.72%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">73</td>
+                                <td class="champ-col"><strong>Garen</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">51.20%</td>
+                                <td class="rate-col">8.31%</td>
+                                <td class="rate-col">7.98%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">74</td>
+                                <td class="champ-col"><strong>Seraphine</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">51.19%</td>
+                                <td class="rate-col">10.64%</td>
+                                <td class="rate-col">7.80%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">75</td>
+                                <td class="champ-col"><strong>Sylas</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">51.17%</td>
+                                <td class="rate-col">8.75%</td>
+                                <td class="rate-col">13.72%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">76</td>
+                                <td class="champ-col"><strong>Soraka</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">51.17%</td>
+                                <td class="rate-col">5.09%</td>
+                                <td class="rate-col">2.21%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">77</td>
+                                <td class="champ-col"><strong>Ekko</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">51.16%</td>
+                                <td class="rate-col">3.37%</td>
+                                <td class="rate-col">2.59%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">78</td>
+                                <td class="champ-col"><strong>Blitzcrank</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">51.13%</td>
+                                <td class="rate-col">5.45%</td>
+                                <td class="rate-col">8.76%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">79</td>
+                                <td class="champ-col"><strong>Urgot</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">51.12%</td>
+                                <td class="rate-col">2.34%</td>
+                                <td class="rate-col">0.97%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">80</td>
+                                <td class="champ-col"><strong>Thresh</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">51.08%</td>
+                                <td class="rate-col">13.60%</td>
+                                <td class="rate-col">7.99%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">81</td>
+                                <td class="champ-col"><strong>Gangplank</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">51.04%</td>
+                                <td class="rate-col">5.12%</td>
+                                <td class="rate-col">3.81%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">82</td>
+                                <td class="champ-col"><strong>Vel'Koz</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">51.04%</td>
+                                <td class="rate-col">3.82%</td>
+                                <td class="rate-col">2.48%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">83</td>
+                                <td class="champ-col"><strong>Jinx</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">51.03%</td>
+                                <td class="rate-col">11.36%</td>
+                                <td class="rate-col">2.52%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">84</td>
+                                <td class="champ-col"><strong>Katarina</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">51.02%</td>
+                                <td class="rate-col">0.65%</td>
+                                <td class="rate-col">16.32%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">85</td>
+                                <td class="champ-col"><strong>Malphite</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">51.00%</td>
+                                <td class="rate-col">0.77%</td>
+                                <td class="rate-col">20.66%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">86</td>
+                                <td class="champ-col"><strong>Jarvan IV</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.99%</td>
+                                <td class="rate-col">6.96%</td>
+                                <td class="rate-col">2.41%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">87</td>
+                                <td class="champ-col"><strong>Veigar</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">50.95%</td>
+                                <td class="rate-col">3.22%</td>
+                                <td class="rate-col">0.88%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">88</td>
+                                <td class="champ-col"><strong>Sona</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">50.91%</td>
+                                <td class="rate-col">2.57%</td>
+                                <td class="rate-col">0.23%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">89</td>
+                                <td class="champ-col"><strong>Shyvana</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.90%</td>
+                                <td class="rate-col">4.20%</td>
+                                <td class="rate-col">7.27%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">90</td>
+                                <td class="champ-col"><strong>Kog'Maw</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">50.87%</td>
+                                <td class="rate-col">1.88%</td>
+                                <td class="rate-col">0.37%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">91</td>
+                                <td class="champ-col"><strong>Yasuo</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">50.85%</td>
+                                <td class="rate-col">1.11%</td>
+                                <td class="rate-col">15.51%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">92</td>
+                                <td class="champ-col"><strong>Vex</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">50.82%</td>
+                                <td class="rate-col">2.50%</td>
+                                <td class="rate-col">3.09%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">93</td>
+                                <td class="champ-col"><strong>Katarina</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">50.79%</td>
+                                <td class="rate-col">7.55%</td>
+                                <td class="rate-col">16.19%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">94</td>
+                                <td class="champ-col"><strong>Lissandra</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">50.74%</td>
+                                <td class="rate-col">4.71%</td>
+                                <td class="rate-col">3.76%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">95</td>
+                                <td class="champ-col"><strong>Shaco</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.72%</td>
+                                <td class="rate-col">4.23%</td>
+                                <td class="rate-col">15.58%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">96</td>
+                                <td class="champ-col"><strong>Riven</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.70%</td>
+                                <td class="rate-col">3.62%</td>
+                                <td class="rate-col">4.50%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">97</td>
+                                <td class="champ-col"><strong>Dr. Mundo</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.67%</td>
+                                <td class="rate-col">3.86%</td>
+                                <td class="rate-col">3.84%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">98</td>
+                                <td class="champ-col"><strong>Sion</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">50.66%</td>
+                                <td class="rate-col">1.05%</td>
+                                <td class="rate-col">1.65%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">99</td>
+                                <td class="champ-col"><strong>Braum</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">50.62%</td>
+                                <td class="rate-col">4.54%</td>
+                                <td class="rate-col">7.60%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">100</td>
+                                <td class="champ-col"><strong>Vladimir</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">50.61%</td>
+                                <td class="rate-col">0.95%</td>
+                                <td class="rate-col">10.24%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">101</td>
+                                <td class="champ-col"><strong>Kennen</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.60%</td>
+                                <td class="rate-col">1.61%</td>
+                                <td class="rate-col">0.92%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">102</td>
+                                <td class="champ-col"><strong>Swain</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">50.60%</td>
+                                <td class="rate-col">1.35%</td>
+                                <td class="rate-col">1.90%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">103</td>
+                                <td class="champ-col"><strong>Alistar</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">50.60%</td>
+                                <td class="rate-col">3.99%</td>
+                                <td class="rate-col">1.47%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">104</td>
+                                <td class="champ-col"><strong>Sion</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.57%</td>
+                                <td class="rate-col">5.79%</td>
+                                <td class="rate-col">1.48%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">105</td>
+                                <td class="champ-col"><strong>Camille</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.56%</td>
+                                <td class="rate-col">2.99%</td>
+                                <td class="rate-col">0.94%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">106</td>
+                                <td class="champ-col"><strong>Fiddlesticks</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.54%</td>
+                                <td class="rate-col">1.84%</td>
+                                <td class="rate-col">1.77%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">107</td>
+                                <td class="champ-col"><strong>Udyr</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.52%</td>
+                                <td class="rate-col">1.99%</td>
+                                <td class="rate-col">1.44%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">108</td>
+                                <td class="champ-col"><strong>Lux</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">50.51%</td>
+                                <td class="rate-col">3.84%</td>
+                                <td class="rate-col">2.20%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">109</td>
+                                <td class="champ-col"><strong>Rakan</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">50.51%</td>
+                                <td class="rate-col">3.64%</td>
+                                <td class="rate-col">0.36%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">110</td>
+                                <td class="champ-col"><strong>Shen</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.49%</td>
+                                <td class="rate-col">4.09%</td>
+                                <td class="rate-col">1.11%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">111</td>
+                                <td class="champ-col"><strong>Renata Glasc</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">50.47%</td>
+                                <td class="rate-col">0.81%</td>
+                                <td class="rate-col">0.01%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">112</td>
+                                <td class="champ-col"><strong>Maokai</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">50.46%</td>
+                                <td class="rate-col">1.65%</td>
+                                <td class="rate-col">0.01%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">113</td>
+                                <td class="champ-col"><strong>Irelia</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.44%</td>
+                                <td class="rate-col">4.53%</td>
+                                <td class="rate-col">12.65%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">114</td>
+                                <td class="champ-col"><strong>Kindred</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.41%</td>
+                                <td class="rate-col">2.63%</td>
+                                <td class="rate-col">1.33%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">115</td>
+                                <td class="champ-col"><strong>Lillia</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.41%</td>
+                                <td class="rate-col">2.53%</td>
+                                <td class="rate-col">1.53%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">116</td>
+                                <td class="champ-col"><strong>Kayn</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.38%</td>
+                                <td class="rate-col">7.39%</td>
+                                <td class="rate-col">3.97%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">117</td>
+                                <td class="champ-col"><strong>Ashe</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">50.37%</td>
+                                <td class="rate-col">11.33%</td>
+                                <td class="rate-col">6.05%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">118</td>
+                                <td class="champ-col"><strong>Skarner</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.36%</td>
+                                <td class="rate-col">0.92%</td>
+                                <td class="rate-col">0.28%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">119</td>
+                                <td class="champ-col"><strong>Ekko</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.36%</td>
+                                <td class="rate-col">4.02%</td>
+                                <td class="rate-col">2.45%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">120</td>
+                                <td class="champ-col"><strong>Sejuani</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.34%</td>
+                                <td class="rate-col">1.88%</td>
+                                <td class="rate-col">0.11%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">121</td>
+                                <td class="champ-col"><strong>Pantheon</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.32%</td>
+                                <td class="rate-col">2.63%</td>
+                                <td class="rate-col">1.80%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">122</td>
+                                <td class="champ-col"><strong>Nocturne</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.32%</td>
+                                <td class="rate-col">6.64%</td>
+                                <td class="rate-col">17.02%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">123</td>
+                                <td class="champ-col"><strong>Vi</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.30%</td>
+                                <td class="rate-col">4.72%</td>
+                                <td class="rate-col">0.98%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">124</td>
+                                <td class="champ-col"><strong>Zoe</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">50.27%</td>
+                                <td class="rate-col">2.71%</td>
+                                <td class="rate-col">3.81%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">125</td>
+                                <td class="champ-col"><strong>Zyra</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">50.27%</td>
+                                <td class="rate-col">2.33%</td>
+                                <td class="rate-col">2.73%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">126</td>
+                                <td class="champ-col"><strong>Jax</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.26%</td>
+                                <td class="rate-col">6.07%</td>
+                                <td class="rate-col">12.77%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">127</td>
+                                <td class="champ-col"><strong>Hwei</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">50.26%</td>
+                                <td class="rate-col">0.72%</td>
+                                <td class="rate-col">3.12%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">128</td>
+                                <td class="champ-col"><strong>Annie</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">50.25%</td>
+                                <td class="rate-col">2.20%</td>
+                                <td class="rate-col">0.76%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">129</td>
+                                <td class="champ-col"><strong>Twitch</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">50.24%</td>
+                                <td class="rate-col">5.00%</td>
+                                <td class="rate-col">7.78%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">130</td>
+                                <td class="champ-col"><strong>Olaf</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.23%</td>
+                                <td class="rate-col">2.37%</td>
+                                <td class="rate-col">3.04%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">131</td>
+                                <td class="champ-col"><strong>Zac</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.22%</td>
+                                <td class="rate-col">2.14%</td>
+                                <td class="rate-col">1.19%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">132</td>
+                                <td class="champ-col"><strong>Kassadin</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">50.22%</td>
+                                <td class="rate-col">2.99%</td>
+                                <td class="rate-col">3.54%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">133</td>
+                                <td class="champ-col"><strong>Cassiopeia</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">50.22%</td>
+                                <td class="rate-col">1.93%</td>
+                                <td class="rate-col">2.91%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">134</td>
+                                <td class="champ-col"><strong>Taliyah</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">50.20%</td>
+                                <td class="rate-col">1.43%</td>
+                                <td class="rate-col">0.38%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">135</td>
+                                <td class="champ-col"><strong>Zaahen</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.15%</td>
+                                <td class="rate-col">2.86%</td>
+                                <td class="rate-col">1.95%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">136</td>
+                                <td class="champ-col"><strong>Fizz</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.15%</td>
+                                <td class="rate-col">0.42%</td>
+                                <td class="rate-col">8.66%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">137</td>
+                                <td class="champ-col"><strong>Poppy</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.14%</td>
+                                <td class="rate-col">1.33%</td>
+                                <td class="rate-col">2.78%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">138</td>
+                                <td class="champ-col"><strong>Diana</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.11%</td>
+                                <td class="rate-col">5.25%</td>
+                                <td class="rate-col">7.62%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">139</td>
+                                <td class="champ-col"><strong>Hwei</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">50.11%</td>
+                                <td class="rate-col">6.01%</td>
+                                <td class="rate-col">2.89%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">140</td>
+                                <td class="champ-col"><strong>Jayce</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">50.11%</td>
+                                <td class="rate-col">0.91%</td>
+                                <td class="rate-col">3.41%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">141</td>
+                                <td class="champ-col"><strong>Zeri</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">50.11%</td>
+                                <td class="rate-col">4.19%</td>
+                                <td class="rate-col">0.70%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">142</td>
+                                <td class="champ-col"><strong>Akali</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.10%</td>
+                                <td class="rate-col">2.65%</td>
+                                <td class="rate-col">16.72%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">143</td>
+                                <td class="champ-col"><strong>Talon</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.10%</td>
+                                <td class="rate-col">5.41%</td>
+                                <td class="rate-col">15.30%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">144</td>
+                                <td class="champ-col"><strong>Nautilus</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">50.10%</td>
+                                <td class="rate-col">10.87%</td>
+                                <td class="rate-col">13.25%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">145</td>
+                                <td class="champ-col"><strong>Graves</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.08%</td>
+                                <td class="rate-col">11.95%</td>
+                                <td class="rate-col">13.54%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">146</td>
+                                <td class="champ-col"><strong>Kha'Zix</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.08%</td>
+                                <td class="rate-col">5.71%</td>
+                                <td class="rate-col">4.42%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">147</td>
+                                <td class="champ-col"><strong>Sylas</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.06%</td>
+                                <td class="rate-col">7.58%</td>
+                                <td class="rate-col">14.10%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">148</td>
+                                <td class="champ-col"><strong>Aatrox</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">50.04%</td>
+                                <td class="rate-col">6.84%</td>
+                                <td class="rate-col">7.49%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">149</td>
+                                <td class="champ-col"><strong>Elise</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">50.04%</td>
+                                <td class="rate-col">1.87%</td>
+                                <td class="rate-col">1.38%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">150</td>
+                                <td class="champ-col"><strong>Gragas</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.96%</td>
+                                <td class="rate-col">2.13%</td>
+                                <td class="rate-col">0.84%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">151</td>
+                                <td class="champ-col"><strong>Vel'Koz</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">49.95%</td>
+                                <td class="rate-col">0.97%</td>
+                                <td class="rate-col">2.75%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">152</td>
+                                <td class="champ-col"><strong>Samira</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">49.91%</td>
+                                <td class="rate-col">4.96%</td>
+                                <td class="rate-col">7.42%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">153</td>
+                                <td class="champ-col"><strong>Trundle</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">49.90%</td>
+                                <td class="rate-col">0.49%</td>
+                                <td class="rate-col">0.53%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">154</td>
+                                <td class="champ-col"><strong>Xin Zhao</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">49.89%</td>
+                                <td class="rate-col">4.38%</td>
+                                <td class="rate-col">5.57%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">155</td>
+                                <td class="champ-col"><strong>Bard</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">49.89%</td>
+                                <td class="rate-col">7.23%</td>
+                                <td class="rate-col">5.26%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">156</td>
+                                <td class="champ-col"><strong>Hecarim</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">49.82%</td>
+                                <td class="rate-col">4.16%</td>
+                                <td class="rate-col">6.69%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">157</td>
+                                <td class="champ-col"><strong>Sett</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.81%</td>
+                                <td class="rate-col">4.69%</td>
+                                <td class="rate-col">2.55%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">158</td>
+                                <td class="champ-col"><strong>Nami</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">49.80%</td>
+                                <td class="rate-col">8.65%</td>
+                                <td class="rate-col">1.77%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">159</td>
+                                <td class="champ-col"><strong>Darius</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.79%</td>
+                                <td class="rate-col">6.66%</td>
+                                <td class="rate-col">13.38%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">160</td>
+                                <td class="champ-col"><strong>Vayne</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">49.79%</td>
+                                <td class="rate-col">5.27%</td>
+                                <td class="rate-col">13.31%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">161</td>
+                                <td class="champ-col"><strong>Aurora</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">49.75%</td>
+                                <td class="rate-col">2.93%</td>
+                                <td class="rate-col">2.03%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">162</td>
+                                <td class="champ-col"><strong>Zed</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">49.75%</td>
+                                <td class="rate-col">7.71%</td>
+                                <td class="rate-col">26.62%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">163</td>
+                                <td class="champ-col"><strong>Lux</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">49.75%</td>
+                                <td class="rate-col">6.16%</td>
+                                <td class="rate-col">2.35%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">164</td>
+                                <td class="champ-col"><strong>Teemo</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.73%</td>
+                                <td class="rate-col">4.25%</td>
+                                <td class="rate-col">7.17%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">165</td>
+                                <td class="champ-col"><strong>Qiyana</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">49.73%</td>
+                                <td class="rate-col">2.52%</td>
+                                <td class="rate-col">2.27%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">166</td>
+                                <td class="champ-col"><strong>Sivir</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">49.71%</td>
+                                <td class="rate-col">4.10%</td>
+                                <td class="rate-col">1.49%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">167</td>
+                                <td class="champ-col"><strong>Fiora</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.70%</td>
+                                <td class="rate-col">2.96%</td>
+                                <td class="rate-col">5.88%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">168</td>
+                                <td class="champ-col"><strong>Irelia</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">49.70%</td>
+                                <td class="rate-col">3.11%</td>
+                                <td class="rate-col">12.53%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">169</td>
+                                <td class="champ-col"><strong>Gwen</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">49.69%</td>
+                                <td class="rate-col">0.62%</td>
+                                <td class="rate-col">4.09%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">170</td>
+                                <td class="champ-col"><strong>Pyke</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">49.69%</td>
+                                <td class="rate-col">6.64%</td>
+                                <td class="rate-col">26.55%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">171</td>
+                                <td class="champ-col"><strong>Morgana</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">49.69%</td>
+                                <td class="rate-col">3.81%</td>
+                                <td class="rate-col">13.06%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">172</td>
+                                <td class="champ-col"><strong>Smolder</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">49.68%</td>
+                                <td class="rate-col">6.71%</td>
+                                <td class="rate-col">15.95%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">173</td>
+                                <td class="champ-col"><strong>Briar</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">49.66%</td>
+                                <td class="rate-col">4.87%</td>
+                                <td class="rate-col">9.89%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">174</td>
+                                <td class="champ-col"><strong>Draven</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">49.66%</td>
+                                <td class="rate-col">4.35%</td>
+                                <td class="rate-col">20.04%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">175</td>
+                                <td class="champ-col"><strong>Naafiri</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">49.62%</td>
+                                <td class="rate-col">6.32%</td>
+                                <td class="rate-col">35.06%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">176</td>
+                                <td class="champ-col"><strong>Pantheon</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">49.61%</td>
+                                <td class="rate-col">3.08%</td>
+                                <td class="rate-col">1.98%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">177</td>
+                                <td class="champ-col"><strong>Master Yi</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">49.60%</td>
+                                <td class="rate-col">6.24%</td>
+                                <td class="rate-col">17.18%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">178</td>
+                                <td class="champ-col"><strong>Brand</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">49.59%</td>
+                                <td class="rate-col">1.07%</td>
+                                <td class="rate-col">13.86%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">179</td>
+                                <td class="champ-col"><strong>Nasus</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.55%</td>
+                                <td class="rate-col">2.82%</td>
+                                <td class="rate-col">5.08%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">180</td>
+                                <td class="champ-col"><strong>Elise</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">49.55%</td>
+                                <td class="rate-col">0.85%</td>
+                                <td class="rate-col">1.47%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">181</td>
+                                <td class="champ-col"><strong>Galio</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">49.54%</td>
+                                <td class="rate-col">4.29%</td>
+                                <td class="rate-col">1.60%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">182</td>
+                                <td class="champ-col"><strong>Nunu & Willump</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">49.53%</td>
+                                <td class="rate-col">1.80%</td>
+                                <td class="rate-col">0.49%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">183</td>
+                                <td class="champ-col"><strong>Shen</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">49.53%</td>
+                                <td class="rate-col">0.53%</td>
+                                <td class="rate-col">0.96%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">184</td>
+                                <td class="champ-col"><strong>Viktor</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">49.52%</td>
+                                <td class="rate-col">9.70%</td>
+                                <td class="rate-col">6.15%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">185</td>
+                                <td class="champ-col"><strong>Yorick</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.51%</td>
+                                <td class="rate-col">3.61%</td>
+                                <td class="rate-col">6.65%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">186</td>
+                                <td class="champ-col"><strong>Volibear</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.51%</td>
+                                <td class="rate-col">2.71%</td>
+                                <td class="rate-col">1.09%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">187</td>
+                                <td class="champ-col"><strong>Twisted Fate</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.51%</td>
+                                <td class="rate-col">0.33%</td>
+                                <td class="rate-col">0.48%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">188</td>
+                                <td class="champ-col"><strong>Anivia</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">49.50%</td>
+                                <td class="rate-col">2.59%</td>
+                                <td class="rate-col">4.51%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">189</td>
+                                <td class="champ-col"><strong>Yone</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.48%</td>
+                                <td class="rate-col">6.61%</td>
+                                <td class="rate-col">4.44%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">190</td>
+                                <td class="champ-col"><strong>Milio</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">49.48%</td>
+                                <td class="rate-col">6.43%</td>
+                                <td class="rate-col">5.44%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">191</td>
+                                <td class="champ-col"><strong>Gwen</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.43%</td>
+                                <td class="rate-col">2.39%</td>
+                                <td class="rate-col">4.18%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">192</td>
+                                <td class="champ-col"><strong>Lulu</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">49.41%</td>
+                                <td class="rate-col">9.00%</td>
+                                <td class="rate-col">8.63%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">193</td>
+                                <td class="champ-col"><strong>Vayne</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.36%</td>
+                                <td class="rate-col">3.32%</td>
+                                <td class="rate-col">13.48%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">194</td>
+                                <td class="champ-col"><strong>Miss Fortune</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">49.35%</td>
+                                <td class="rate-col">6.19%</td>
+                                <td class="rate-col">0.97%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">195</td>
+                                <td class="champ-col"><strong>Yasuo</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.34%</td>
+                                <td class="rate-col">3.05%</td>
+                                <td class="rate-col">15.56%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">196</td>
+                                <td class="champ-col"><strong>Rengar</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">49.32%</td>
+                                <td class="rate-col">4.39%</td>
+                                <td class="rate-col">14.56%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">197</td>
+                                <td class="champ-col"><strong>Talon</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">49.31%</td>
+                                <td class="rate-col">2.24%</td>
+                                <td class="rate-col">15.31%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">198</td>
+                                <td class="champ-col"><strong>Cho'Gath</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.30%</td>
+                                <td class="rate-col">2.64%</td>
+                                <td class="rate-col">0.91%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">199</td>
+                                <td class="champ-col"><strong>Viego</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">49.28%</td>
+                                <td class="rate-col">9.87%</td>
+                                <td class="rate-col">8.81%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">200</td>
+                                <td class="champ-col"><strong>Sylas</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">49.26%</td>
+                                <td class="rate-col">1.14%</td>
+                                <td class="rate-col">14.06%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">201</td>
+                                <td class="champ-col"><strong>Akshan</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">49.22%</td>
+                                <td class="rate-col">2.76%</td>
+                                <td class="rate-col">4.24%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">202</td>
+                                <td class="champ-col"><strong>Camille</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">49.07%</td>
+                                <td class="rate-col">1.31%</td>
+                                <td class="rate-col">1.16%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">203</td>
+                                <td class="champ-col"><strong>Volibear</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">49.06%</td>
+                                <td class="rate-col">1.08%</td>
+                                <td class="rate-col">1.21%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">204</td>
+                                <td class="champ-col"><strong>Gnar</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">49.02%</td>
+                                <td class="rate-col">3.44%</td>
+                                <td class="rate-col">1.06%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">205</td>
+                                <td class="champ-col"><strong>LeBlanc</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">48.99%</td>
+                                <td class="rate-col">0.76%</td>
+                                <td class="rate-col">9.57%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">206</td>
+                                <td class="champ-col"><strong>Mordekaiser</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.94%</td>
+                                <td class="rate-col">4.60%</td>
+                                <td class="rate-col">6.54%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">207</td>
+                                <td class="champ-col"><strong>Jayce</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">48.94%</td>
+                                <td class="rate-col">1.77%</td>
+                                <td class="rate-col">3.73%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">208</td>
+                                <td class="champ-col"><strong>Jhin</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">48.88%</td>
+                                <td class="rate-col">14.66%</td>
+                                <td class="rate-col">0.69%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">209</td>
+                                <td class="champ-col"><strong>Malzahar</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">48.86%</td>
+                                <td class="rate-col">5.54%</td>
+                                <td class="rate-col">11.28%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">210</td>
+                                <td class="champ-col"><strong>Kai'Sa</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">48.83%</td>
+                                <td class="rate-col">12.27%</td>
+                                <td class="rate-col">1.10%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">211</td>
+                                <td class="champ-col"><strong>Ryze</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.82%</td>
+                                <td class="rate-col">0.76%</td>
+                                <td class="rate-col">0.85%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">212</td>
+                                <td class="champ-col"><strong>Tristana</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">48.81%</td>
+                                <td class="rate-col">0.72%</td>
+                                <td class="rate-col">2.15%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">213</td>
+                                <td class="champ-col"><strong>Renekton</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.80%</td>
+                                <td class="rate-col">4.96%</td>
+                                <td class="rate-col">4.20%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">214</td>
+                                <td class="champ-col"><strong>Varus</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.80%</td>
+                                <td class="rate-col">1.39%</td>
+                                <td class="rate-col">4.31%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">215</td>
+                                <td class="champ-col"><strong>Anivia</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">48.80%</td>
+                                <td class="rate-col">0.59%</td>
+                                <td class="rate-col">4.50%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">216</td>
+                                <td class="champ-col"><strong>Ambessa</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.79%</td>
+                                <td class="rate-col">3.16%</td>
+                                <td class="rate-col">6.95%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">217</td>
+                                <td class="champ-col"><strong>Master Yi</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.79%</td>
+                                <td class="rate-col">0.54%</td>
+                                <td class="rate-col">17.44%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">218</td>
+                                <td class="champ-col"><strong>Brand</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">48.75%</td>
+                                <td class="rate-col">3.38%</td>
+                                <td class="rate-col">14.08%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">219</td>
+                                <td class="champ-col"><strong>Naafiri</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.72%</td>
+                                <td class="rate-col">0.62%</td>
+                                <td class="rate-col">35.12%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">220</td>
+                                <td class="champ-col"><strong>Jayce</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.72%</td>
+                                <td class="rate-col">5.16%</td>
+                                <td class="rate-col">3.70%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">221</td>
+                                <td class="champ-col"><strong>Jax</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">48.72%</td>
+                                <td class="rate-col">1.72%</td>
+                                <td class="rate-col">12.97%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">222</td>
+                                <td class="champ-col"><strong>K'Sante</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.71%</td>
+                                <td class="rate-col">5.24%</td>
+                                <td class="rate-col">3.10%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">223</td>
+                                <td class="champ-col"><strong>LeBlanc</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">48.69%</td>
+                                <td class="rate-col">3.68%</td>
+                                <td class="rate-col">9.61%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">224</td>
+                                <td class="champ-col"><strong>Rumble</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.68%</td>
+                                <td class="rate-col">2.01%</td>
+                                <td class="rate-col">1.07%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">225</td>
+                                <td class="champ-col"><strong>Aphelios</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">48.63%</td>
+                                <td class="rate-col">4.58%</td>
+                                <td class="rate-col">1.71%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">226</td>
+                                <td class="champ-col"><strong>Caitlyn</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">48.63%</td>
+                                <td class="rate-col">15.64%</td>
+                                <td class="rate-col">22.38%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">227</td>
+                                <td class="champ-col"><strong>Xerath</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">48.63%</td>
+                                <td class="rate-col">3.32%</td>
+                                <td class="rate-col">5.98%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">228</td>
+                                <td class="champ-col"><strong>Shaco</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">48.55%</td>
+                                <td class="rate-col">1.47%</td>
+                                <td class="rate-col">15.85%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">229</td>
+                                <td class="champ-col"><strong>Akali</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">48.51%</td>
+                                <td class="rate-col">5.76%</td>
+                                <td class="rate-col">17.10%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">230</td>
+                                <td class="champ-col"><strong>Udyr</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.50%</td>
+                                <td class="rate-col">0.56%</td>
+                                <td class="rate-col">1.59%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">231</td>
+                                <td class="champ-col"><strong>Yasuo</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">48.49%</td>
+                                <td class="rate-col">7.05%</td>
+                                <td class="rate-col">15.88%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">232</td>
+                                <td class="champ-col"><strong>Karma</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">48.47%</td>
+                                <td class="rate-col">8.41%</td>
+                                <td class="rate-col">4.23%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">233</td>
+                                <td class="champ-col"><strong>Warwick</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.45%</td>
+                                <td class="rate-col">1.48%</td>
+                                <td class="rate-col">1.82%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">234</td>
+                                <td class="champ-col"><strong>Quinn</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">48.43%</td>
+                                <td class="rate-col">2.07%</td>
+                                <td class="rate-col">1.40%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">235</td>
+                                <td class="champ-col"><strong>Karthus</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">48.32%</td>
+                                <td class="rate-col">1.32%</td>
+                                <td class="rate-col">1.51%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">236</td>
+                                <td class="champ-col"><strong>Lucian</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">48.29%</td>
+                                <td class="rate-col">8.43%</td>
+                                <td class="rate-col">1.46%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">237</td>
+                                <td class="champ-col"><strong>Ambessa</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">48.28%</td>
+                                <td class="rate-col">1.67%</td>
+                                <td class="rate-col">7.25%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">238</td>
+                                <td class="champ-col"><strong>Pantheon</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">48.26%</td>
+                                <td class="rate-col">0.50%</td>
+                                <td class="rate-col">1.92%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">239</td>
+                                <td class="champ-col"><strong>Yunara</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">48.24%</td>
+                                <td class="rate-col">4.87%</td>
+                                <td class="rate-col">1.30%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">240</td>
+                                <td class="champ-col"><strong>Kalista</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">48.22%</td>
+                                <td class="rate-col">1.51%</td>
+                                <td class="rate-col">0.27%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">241</td>
+                                <td class="champ-col"><strong>Gwen</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">48.21%</td>
+                                <td class="rate-col">1.14%</td>
+                                <td class="rate-col">4.11%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">242</td>
+                                <td class="champ-col"><strong>Lee Sin</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">48.20%</td>
+                                <td class="rate-col">12.98%</td>
+                                <td class="rate-col">8.96%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">243</td>
+                                <td class="champ-col"><strong>Trundle</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.18%</td>
+                                <td class="rate-col">1.62%</td>
+                                <td class="rate-col">0.47%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">244</td>
+                                <td class="champ-col"><strong>Tahm Kench</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.18%</td>
+                                <td class="rate-col">1.71%</td>
+                                <td class="rate-col">2.57%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">245</td>
+                                <td class="champ-col"><strong>Yone</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">48.07%</td>
+                                <td class="rate-col">5.41%</td>
+                                <td class="rate-col">4.47%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">246</td>
+                                <td class="champ-col"><strong>Neeko</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">48.07%</td>
+                                <td class="rate-col">1.61%</td>
+                                <td class="rate-col">0.54%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">247</td>
+                                <td class="champ-col"><strong>Aurora</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">48.03%</td>
+                                <td class="rate-col">0.54%</td>
+                                <td class="rate-col">1.77%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">248</td>
+                                <td class="champ-col"><strong>Ryze</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">47.95%</td>
+                                <td class="rate-col">2.91%</td>
+                                <td class="rate-col">0.62%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">249</td>
+                                <td class="champ-col"><strong>Qiyana</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">47.94%</td>
+                                <td class="rate-col">1.03%</td>
+                                <td class="rate-col">2.23%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">250</td>
+                                <td class="champ-col"><strong>Corki</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">47.92%</td>
+                                <td class="rate-col">1.55%</td>
+                                <td class="rate-col">0.31%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">251</td>
+                                <td class="champ-col"><strong>Swain</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">47.70%</td>
+                                <td class="rate-col">2.33%</td>
+                                <td class="rate-col">1.84%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">252</td>
+                                <td class="champ-col"><strong>Ezreal</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">47.46%</td>
+                                <td class="rate-col">16.34%</td>
+                                <td class="rate-col">6.46%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">253</td>
+                                <td class="champ-col"><strong>Malzahar</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">47.45%</td>
+                                <td class="rate-col">0.66%</td>
+                                <td class="rate-col">11.25%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">254</td>
+                                <td class="champ-col"><strong>Pantheon</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">47.31%</td>
+                                <td class="rate-col">1.13%</td>
+                                <td class="rate-col">1.77%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">255</td>
+                                <td class="champ-col"><strong>Nunu & Willump</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">47.22%</td>
+                                <td class="rate-col">0.51%</td>
+                                <td class="rate-col">0.73%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">256</td>
+                                <td class="champ-col"><strong>Aurelion Sol</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">47.20%</td>
+                                <td class="rate-col">1.90%</td>
+                                <td class="rate-col">0.72%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">257</td>
+                                <td class="champ-col"><strong>Yuumi</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">47.15%</td>
+                                <td class="rate-col">6.12%</td>
+                                <td class="rate-col">6.13%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">258</td>
+                                <td class="champ-col"><strong>Malphite</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">47.10%</td>
+                                <td class="rate-col">0.71%</td>
+                                <td class="rate-col">20.51%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">259</td>
+                                <td class="champ-col"><strong>Xin Zhao</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">47.08%</td>
+                                <td class="rate-col">0.91%</td>
+                                <td class="rate-col">5.72%</td>
+                            </tr>
+                            <tr data-role="top">
+                                <td class="rank-col">260</td>
+                                <td class="champ-col"><strong>Xin Zhao</strong></td>
+                                <td class="role-col">Top</td>
+                                <td class="rate-col">47.03%</td>
+                                <td class="rate-col">1.76%</td>
+                                <td class="rate-col">5.58%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">261</td>
+                                <td class="champ-col"><strong>Orianna</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">46.80%</td>
+                                <td class="rate-col">2.80%</td>
+                                <td class="rate-col">0.54%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">262</td>
+                                <td class="champ-col"><strong>Varus</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">46.55%</td>
+                                <td class="rate-col">4.15%</td>
+                                <td class="rate-col">4.49%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">263</td>
+                                <td class="champ-col"><strong>Azir</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">46.22%</td>
+                                <td class="rate-col">1.78%</td>
+                                <td class="rate-col">0.11%</td>
+                            </tr>
+                            <tr data-role="jungle">
+                                <td class="rank-col">264</td>
+                                <td class="champ-col"><strong>Zed</strong></td>
+                                <td class="role-col">Jungle</td>
+                                <td class="rate-col">46.01%</td>
+                                <td class="rate-col">2.08%</td>
+                                <td class="rate-col">26.78%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">265</td>
+                                <td class="champ-col"><strong>Zoe</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">45.98%</td>
+                                <td class="rate-col">1.03%</td>
+                                <td class="rate-col">3.81%</td>
+                            </tr>
+                            <tr data-role="bottom">
+                                <td class="rank-col">266</td>
+                                <td class="champ-col"><strong>Mel</strong></td>
+                                <td class="role-col">Bottom</td>
+                                <td class="rate-col">45.39%</td>
+                                <td class="rate-col">1.56%</td>
+                                <td class="rate-col">21.91%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">267</td>
+                                <td class="champ-col"><strong>Ashe</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">45.26%</td>
+                                <td class="rate-col">0.61%</td>
+                                <td class="rate-col">5.82%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">268</td>
+                                <td class="champ-col"><strong>Smolder</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">44.70%</td>
+                                <td class="rate-col">0.80%</td>
+                                <td class="rate-col">15.71%</td>
+                            </tr>
+                            <tr data-role="mid">
+                                <td class="rank-col">269</td>
+                                <td class="champ-col"><strong>Mel</strong></td>
+                                <td class="role-col">Mid</td>
+                                <td class="rate-col">44.54%</td>
+                                <td class="rate-col">2.95%</td>
+                                <td class="rate-col">21.85%</td>
+                            </tr>
+                            <tr data-role="support">
+                                <td class="rank-col">270</td>
+                                <td class="champ-col"><strong>Mel</strong></td>
+                                <td class="role-col">Support</td>
+                                <td class="rate-col">43.83%</td>
+                                <td class="rate-col">1.94%</td>
+                                <td class="rate-col">22.20%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+                    <rect x="15" y="15" width="70" height="70" rx="12" stroke="currentColor" stroke-width="8"/>
+                    <path d="M 35 65 L 65 35" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="65" cy="65" r="6" fill="currentColor"/>
+                </svg>
+                wr.labs
+            </div>
+            <div class="footer-links">
+                <a href="stats.html">Stats</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About Us</a>
+                <a href="#" id="open-terms">Terms &amp; Conditions</a>
+                <a href="#" id="open-privacy">Privacy Policy</a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 wr.labs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Native Modals for Terms and Privacy -->
+    <dialog id="modal-terms" class="legal-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Terms of Service</h2>
+                <button class="close-modal" autofocus>&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing or using wr.labs, you agree to comply with these Terms of Service. If you do not agree, please do not use our services.</p>
+                
+                <h3>2. Use Restrictions</h3>
+                <p>All data, model estimates, win rates, and telemetry analysis provided on this website are for your personal, non-commercial use only. You agree not to scrape, copy, repurpose, redistribute, or use this information on any other website, game tracker, or application service without our prior written consent.</p>
+                
+                <h3>3. Intellectual Property</h3>
+                <p>All design elements, analysis software, and statistical reports are the intellectual property of wr.labs. League of Legends is a registered trademark of Riot Games, Inc. wr.labs is an independent project and is not affiliated with Riot Games.</p>
+                
+                <h3>4. Disclaimer of Warranty</h3>
+                <p>Our analytics are provided "as is" without warranty of any kind. We are not liable for any matchmaking losses, decisions, or damages resulting from the use of our model outputs.</p>
+                <p class="last-updated">Last Updated: June 11, 2026</p>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="modal-privacy" class="legal-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <button class="close-modal" autofocus>&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>1. Account Information</h3>
+                <p>We collect account details that you explicitly provide to us, such as your email address when registering, subscribing, or contacting our team.</p>
+                
+                <h3>2. Gameplay Data</h3>
+                <p>We collect and process your League of Legends related telemetry, including games played, champions played, item builds, and performance metrics to generate game-state analysis and stats.</p>
+                
+                <h3>3. Data Usage</h3>
+                <p>Your information is used solely to provide and improve the wr.labs models and analysis tools. We do not sell or share your personal data with third-party advertisers.</p>
+                <p class="last-updated">Last Updated: June 11, 2026</p>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html>

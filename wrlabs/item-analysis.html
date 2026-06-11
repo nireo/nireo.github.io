@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wr.labs — Deep Item Analysis</title>
+    <meta name="description" content="Isolating unbiased item win rates using deep telemetry models.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+                    <rect x="15" y="15" width="70" height="70" rx="12" stroke="currentColor" stroke-width="8"/>
+                    <path d="M 35 65 L 65 35" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="65" cy="65" r="6" fill="currentColor"/>
+                </svg>
+                wr.labs
+            </a>
+            <nav class="main-nav">
+                <a href="stats.html" class="nav-active">Stats</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About Us</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="stats-main-padding">
+        <section class="section">
+            <div class="container" style="position: relative; max-width: 1000px; margin: 0 auto;">
+                
+                <!-- Center Floating Coming Soon Card -->
+                <div class="coming-soon-overlay" style="background-color: rgba(10, 10, 12, 0.65); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid var(--border-light); border-radius: 12px; max-width: 500px; margin: 40px auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 48px 32px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); z-index: 10; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div class="overlay-badge" style="position: static; display: inline-block; margin-bottom: 16px;">Model Calibration</div>
+                    <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 12px; color: var(--text-primary);">Deep Item Analysis</h2>
+                    <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px; max-width: 400px;">
+                        Traditional winrate statistics suffer from correlation bias. We are currently calibrating our neural networks to isolate item win rates by adjusting for gold differentials, purchase timings, and player coordinates. This engine will be available in the next release.
+                    </p>
+                    <div style="display: flex; gap: 12px; justify-content: center;">
+                        <a href="stats.html" class="btn btn-primary">Back to Stats</a>
+                        <a href="pricing.html" class="btn btn-outline">View Pricing</a>
+                    </div>
+                </div>
+
+                <!-- Blurred Mock Dashboard background to show high quality effort -->
+                <div class="mock-dashboard-bg" style="opacity: 0.15; filter: blur(4px); pointer-events: none; user-select: none; display: flex; flex-direction: column; gap: 24px;">
+                    <!-- Dashboard Header -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-light); padding-bottom: 16px;">
+                        <div>
+                            <h1 style="font-size: 24px; font-weight: 600;">Telemetry-Modeled Itemization</h1>
+                            <p style="color: var(--text-secondary); font-size: 13px;">Unbiased win expectancy adjustments per item purchase</p>
+                        </div>
+                        <div style="background-color: var(--bg-code); padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-light); font-size: 13px;">
+                            Patch 26.12
+                        </div>
+                    </div>
+
+                    <!-- Search and Filters Mockup -->
+                    <div style="display: flex; gap: 16px;">
+                        <div style="flex: 1; height: 42px; background-color: var(--bg-code); border: 1px solid var(--border-light); border-radius: 6px; padding: 12px;">Search items...</div>
+                        <div style="width: 150px; height: 42px; background-color: var(--bg-code); border: 1px solid var(--border-light); border-radius: 6px; padding: 12px;">All Item Types</div>
+                    </div>
+
+                    <!-- Layout grid -->
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+                        <!-- Table Column -->
+                        <div class="table-container">
+                            <table class="stats-table">
+                                <thead>
+                                    <tr>
+                                        <th>Item Name</th>
+                                        <th class="rate-col">Raw Win Rate</th>
+                                        <th class="rate-col">Adjusted Win Rate</th>
+                                        <th class="rate-col">Purchase Timing</th>
+                                        <th class="rate-col">Sample Size</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Infinity Edge</strong></td>
+                                        <td class="rate-col font-mono">56.24%</td>
+                                        <td class="rate-col font-mono val-high">+2.34%</td>
+                                        <td class="rate-col font-mono">22.4 min</td>
+                                        <td class="rate-col font-mono">14,204</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Luden's Companion</strong></td>
+                                        <td class="rate-col font-mono">51.10%</td>
+                                        <td class="rate-col font-mono val-low">-0.82%</td>
+                                        <td class="rate-col font-mono">14.1 min</td>
+                                        <td class="rate-col font-mono">22,912</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Trinity Force</strong></td>
+                                        <td class="rate-col font-mono">53.48%</td>
+                                        <td class="rate-col font-mono val-high">+1.15%</td>
+                                        <td class="rate-col font-mono">16.8 min</td>
+                                        <td class="rate-col font-mono">8,634</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Liandry's Torment</strong></td>
+                                        <td class="rate-col font-mono">52.95%</td>
+                                        <td class="rate-col font-mono val-high">+0.48%</td>
+                                        <td class="rate-col font-mono">18.2 min</td>
+                                        <td class="rate-col font-mono">11,042</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sunfire Aegis</strong></td>
+                                        <td class="rate-col font-mono">48.20%</td>
+                                        <td class="rate-col font-mono val-low">-1.42%</td>
+                                        <td class="rate-col font-mono">15.5 min</td>
+                                        <td class="rate-col font-mono">6,732</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Graphical Column -->
+                        <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-light); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+                            <h3 style="font-size: 15px; font-weight: 600;">Neural Network Insights</h3>
+                            <div style="height: 120px; background-color: var(--bg-code); border: 1px solid var(--border-light); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--text-secondary);">
+                                Item win expectancy weight map
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                                    <span style="color: var(--text-secondary);">Model accuracy:</span>
+                                    <span class="font-mono">98.42%</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                                    <span style="color: var(--text-secondary);">Unbiasing method:</span>
+                                    <span>Spatial gold adjustment</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+                    <rect x="15" y="15" width="70" height="70" rx="12" stroke="currentColor" stroke-width="8"/>
+                    <path d="M 35 65 L 65 35" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="65" cy="65" r="6" fill="currentColor"/>
+                </svg>
+                wr.labs
+            </div>
+            <div class="footer-links">
+                <a href="stats.html">Stats</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About Us</a>
+                <a href="#" id="open-terms">Terms &amp; Conditions</a>
+                <a href="#" id="open-privacy">Privacy Policy</a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 wr.labs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Native Modals for Terms and Privacy -->
+    <dialog id="modal-terms" class="legal-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Terms of Service</h2>
+                <button class="close-modal" autofocus>&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing or using wr.labs, you agree to comply with these Terms of Service. If you do not agree, please do not use our services.</p>
+                
+                <h3>2. Use Restrictions</h3>
+                <p>All data, model estimates, win rates, and telemetry analysis provided on this website are for your personal, non-commercial use only. You agree not to scrape, copy, repurpose, redistribute, or use this information on any other website, game tracker, or application service without our prior written consent.</p>
+                
+                <h3>3. Intellectual Property</h3>
+                <p>All design elements, analysis software, and statistical reports are the intellectual property of wr.labs. League of Legends is a registered trademark of Riot Games, Inc. wr.labs is an independent project and is not affiliated with Riot Games.</p>
+                
+                <h3>4. Disclaimer of Warranty</h3>
+                <p>Our analytics are provided "as is" without warranty of any kind. We are not liable for any matchmaking losses, decisions, or damages resulting from the use of our model outputs.</p>
+                <p class="last-updated">Last Updated: June 11, 2026</p>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="modal-privacy" class="legal-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <button class="close-modal" autofocus>&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>1. Account Information</h3>
+                <p>We collect account details that you explicitly provide to us, such as your email address when registering, subscribing, or contacting our team.</p>
+                
+                <h3>2. Gameplay Data</h3>
+                <p>We collect and process your League of Legends related telemetry, including games played, champions played, item builds, and performance metrics to generate game-state analysis and stats.</p>
+                
+                <h3>3. Data Usage</h3>
+                <p>Your information is used solely to provide and improve the wr.labs models and analysis tools. We do not sell or share your personal data with third-party advertisers.</p>
+                <p class="last-updated">Last Updated: June 11, 2026</p>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html>
