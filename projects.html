@@ -24,31 +24,43 @@
 <ul>
 <li><a href="https://github.com/nireo/c25519" target="_blank" rel="noopener noreferrer">c25519</a>: Side-channel attack resistant Ed25519 implementation in C that also includes SHA-512. It focuses on practical performance with generally good results, while passing a broad set of test vectors.</li>
 <li><a href="https://github.com/nireo/newspeak" target="_blank" rel="noopener noreferrer">newspeak</a>: End-to-end encrypted chat in Rust implementing Signal&#39;s Post-Quantum Extended Diffie-Hellman and Double Ratchet. Built with <code>tonic</code> for gRPC, SQLite for storage, <code>dalek</code> primitives, and a <code>ratatui</code> terminal UI.</li>
+</ul>
+<details>
+<summary>[more]</summary>
+<ul>
+<li><a href="https://github.com/nireo/pqxdh" target="_blank" rel="noopener noreferrer">pqxdh</a>: Go library for Post-Quantum Extended Diffie-Hellman and XEdDSA. Extends X3DH with ML-KEM to provide stronger resistance against future quantum adversaries. It relies on a hybrid approach as ML-KEM is relatively recent and shouldn't be blindly trusted.</li>
 <li><a href="https://github.com/nireo/secp256k1" target="_blank" rel="noopener noreferrer">secp256k1</a>: secp256k1 signing and verification implementation with Jacobian coordinates and Montgomery representation to reduce expensive operations. Includes deterministic RFC6979 nonces. Implemented in Rust.</li>
-<li><a href="https://github.com/nireo/pqxdh" target="_blank" rel="noopener noreferrer">pqxdh</a>: Go library for Post-Quantum Extended Diffie-Hellman and XEdDSA. Extends X3DH with ML-KEM to provide stronger resistance against future quantum adversaries.</li>
 <li><a href="https://github.com/nireo/merkle" target="_blank" rel="noopener noreferrer">merkle</a>: Merkle tree implementations in Go and C using SHA-256, including generation and verification of inclusion proofs.</li>
 <li><a href="https://github.com/nireo/schnorr" target="_blank" rel="noopener noreferrer">schnorr</a>: Schnorr signatures implemented over secp256k1 curve in 100 lines of Python. Serves as an educational implementation without dependencies (related to math).</li>
 </ul>
+</details>
 <h3 id="programming-languages-and-parsing">programming languages and parsing</h3>
 <ul>
-<li><a href="https://github.com/nireo/kukka" target="_blank" rel="noopener noreferrer">kukka</a>: Small and fast parser combinator library in Rust that uses static dispatch to avoid trait-object overhead. It&#39;s mature enough to write parsers for JSON and CSV in a few lines.</li>
+<li><a href="https://github.com/nireo/kukka" target="_blank" rel="noopener noreferrer">kukka</a>: Small and fast parser combinator library in Rust that uses static dispatch to avoid trait-object overhead. It&#39;s mature enough to write performant parsers for JSON and CSV in a few lines.</li>
 <li><a href="https://github.com/nireo/mc" target="_blank" rel="noopener noreferrer">mc</a>: A simplistic C compiler written in Go with lexical analysis, parsing, IR generation, and x64 assembly output. Stopped working on this after getting a macbook.</li>
 </ul>
 <h3 id="distributed-systems-and-databases">distributed systems and databases</h3>
 <ul>
 <li><a href="https://github.com/nireo/haystack" target="_blank" rel="noopener noreferrer">haystack</a>: Distributed file system inspired by Facebook&#39;s Haystack architecture. Uses a Raft-based directory cluster to map files to append-only volumes and coordinates replication across store servers.</li>
 <li><a href="https://github.com/nireo/distsql" target="_blank" rel="noopener noreferrer">distsql</a>: Distributed consensus layer built on top of SQLite for coordinating state across nodes.</li>
+</ul>
+<details>
+<summary>[more]</summary>
+<ul>
 <li><a href="https://github.com/nireo/levelsql" target="_blank" rel="noopener noreferrer">levelsql</a>: Minimal SQL implementation that stores relational data as key-value pairs on LevelDB.</li>
 </ul>
+</details>
 <h3 id="random-fun">random / fun</h3>
 <ul>
 <li><a href="https://github.com/nireo/ff" target="_blank" rel="noopener noreferrer">ff</a>: A single file C compiler that is able to compile itself.</li>
 <li><a href="https://github.com/nireo/dot" target="_blank" rel="noopener noreferrer">dot</a>: A tiny easy-to-use dotfile manager built with Ruby in a few hundred lines.</li>
+</ul>
+<details>
+<summary>[more]</summary>
+<ul>
 <li><a href="https://github.com/nireo/hashvis" target="_blank" rel="noopener noreferrer">hashvis</a>: Small command line utility that generates unique ASCII art based on file contents written in C.</li>
 </ul>
-
-                
-                
+</details>
             </main>
         </div>
     </div>
