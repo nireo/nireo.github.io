@@ -1,18 +1,22 @@
 :root {
-    --background-colour: #f9f9f9;
-    --foreground-colour: #424242;
-    --foreground-colour-titles: #000000;
-    --half-way-shade: #7f7f7f;
-    --surface-colour: #f0f0f0;
-    
+    color-scheme: dark;
+
+    --background-colour: #131313;
+    --foreground-colour: #c9c5bc;
+    --foreground-colour-titles: #ece8df;
+    --half-way-shade: #55534d;
+    --surface-colour: #1c1c1a;
+
     --smaller-size: 8px;
     --small-size: 12px;
     --font-size: 16px;
-    --line-height-size: 22px;
+    --line-height-size: 24px;
     --medium-size: 36px;
     --large-size: 48px;
     --larger-size: 72px;
     --body-max-width: 800px;
+
+    --mono-font: ui-monospace, SFMono-Regular, Menlo, 'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace;
 }
 
 * {
@@ -20,7 +24,7 @@
 }
 
 html {
-    font-family: Menlo, SFMono-Regular, "SF Mono", ui-monospace, 'Cascadia Code', 'Source Code Pro', Consolas, 'DejaVu Sans Mono', monospace;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 400;
     font-size: var(--font-size);
     line-height: var(--line-height-size);
@@ -94,16 +98,17 @@ blockquote > footer > a {
 }
 
 h1, h2, h3 {
+    font-family: var(--mono-font);
     font-weight: 600;
     color: var(--foreground-colour-titles);
 }
 
 h1 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 h2 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     margin-top: var(--larger-size);
 }
 
@@ -199,24 +204,6 @@ summary::marker, summary::-webkit-details-marker {
     }
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-colour: #131414;
-        --foreground-colour: #b6c2cc;
-        --foreground-colour-titles: #ffffff;
-        --half-way-shade: #878787;
-        --surface-colour: #1c1d1d;
-    }
-    
-    html {
-        font-weight: 300;
-    }
-    
-    h1, h2, h3 {
-        font-weight: 500;
-    }
-}
-
 /* Custom site adaptions to fit the style */
 .navbar {
     display: flex;
@@ -228,6 +215,8 @@ summary::marker, summary::-webkit-details-marker {
 }
 
 .navbar a, .navbar a:visited {
+    font-family: var(--mono-font);
+    font-size: 0.9em;
     text-decoration: none;
 }
 
@@ -238,7 +227,7 @@ summary::marker, summary::-webkit-details-marker {
 
 .navbar .fingerprint {
     margin-left: auto;
-    font-size: var(--font-size);
+    font-size: 0.85em;
     word-break: break-all;
 }
 
@@ -273,8 +262,8 @@ summary::marker, summary::-webkit-details-marker {
 
 /* Code block styles */
 pre, code {
-    font-family: inherit;
-    font-size: 0.9em;
+    font-family: var(--mono-font);
+    font-size: 0.85em;
 }
 
 pre {
