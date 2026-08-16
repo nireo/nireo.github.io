@@ -1,10 +1,28 @@
 :root {
     color-scheme: dark;
+    --bg: #000;
     --text: #f4f4f4;
     --muted: #a0a0a0;
+    --heading: #fff;
+    --hover: #fff;
     --link: #8ea6ff;
+    --blockquote: #ddd;
     --surface: #111;
     --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+        --bg: #fff;
+        --text: #1a1a1a;
+        --muted: #6b6b6b;
+        --heading: #000;
+        --hover: #000;
+        --link: #3b5bdb;
+        --blockquote: #333;
+        --surface: #f2f2f2;
+    }
 }
 
 * {
@@ -12,7 +30,7 @@
 }
 
 html {
-    background: #000;
+    background: var(--bg);
     color: var(--text);
     font: 18px/1.45 Arial, Helvetica, sans-serif;
 }
@@ -25,7 +43,7 @@ body {
 h1,
 h2,
 h3 {
-    color: #fff;
+    color: var(--heading);
     line-height: 1.15;
 }
 
@@ -81,7 +99,7 @@ a:hover,
 a:focus-visible,
 summary:hover,
 summary:focus-visible {
-    color: #fff;
+    color: var(--hover);
 }
 
 img,
@@ -94,7 +112,7 @@ video {
 
 blockquote {
     border-left: 2px solid var(--muted);
-    color: #ddd;
+    color: var(--blockquote);
     padding-left: 1rem;
 }
 
