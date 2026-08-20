@@ -8,7 +8,7 @@
     --link: #8ea6ff;
     --blockquote: #ddd;
     --surface: #111;
-    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --mono: Monaco, Menlo, "SF Mono", SFMono-Regular, "DejaVu Sans Mono", "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
 @media (prefers-color-scheme: light) {
@@ -44,6 +44,7 @@ h1,
 h2,
 h3 {
     color: var(--heading);
+    font-family: var(--mono);
     line-height: 1.15;
 }
 
@@ -126,20 +127,25 @@ summary {
 }
 
 .navbar {
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
+    font-family: var(--mono);
     font-size: 0.9rem;
+    gap: 1.25rem;
     line-height: 1.3;
     margin-bottom: 2rem;
 }
 
-.navbar a + a::before {
-    color: var(--text);
-    content: "/";
-    display: inline-block;
-    font-size: 0.9rem;
-    margin: 0 0.75rem;
+.navbar a {
+    color: var(--muted);
     text-decoration: none;
+    transition: color 120ms ease;
+}
+
+.navbar a:hover,
+.navbar a:focus-visible {
+    color: var(--hover);
 }
 
 .fingerprint {
