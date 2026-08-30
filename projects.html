@@ -18,11 +18,15 @@
         <div>
             <main>
                 
-                <h2 id="projects">projects</h2>
+                <h2 id="projects">Projects</h2>
 <p>I like doing recreational programming and just working on random things that interest me. Try recreational programming!</p>
-<h3 id="security-and-cryptography">security and cryptography</h3>
+<h3 id="ml-ai">ML/AI</h3>
 <ul>
-<li><a href="https://github.com/nireo/c25519" target="_blank" rel="noopener noreferrer">c25519</a>: Side-channel attack resistant Ed25519 implementation in C that also includes SHA-512. It focuses on practical performance with generally good results, while passing a broad set of test vectors.</li>
+<li><a href="https://github.com/nireo/chibillm" target="_blank" rel="noopener noreferrer">chibillm</a>: Zero dependency C++ LLM inference engine with custom Metal kernels. Currently it&#39;s able to run Qwen3-0.6B, but I&#39;m attempting to get Qwen3.8-27b running at least somewhat efficiently. The engine itself has zero dependencies but the HTTP library for serving the completion endpoint and JSON parsing have dependencies.</li>
+</ul>
+<h3 id="security-and-cryptography">Security and cryptography</h3>
+<ul>
+<li><a href="https://github.com/nireo/c25519" target="_blank" rel="noopener noreferrer">c25519</a>: Side-channel-attack-resistant Ed25519 implementation in C that also includes SHA-512. It focuses on practical performance with generally good results while passing a broad set of test vectors.</li>
 <li><a href="https://github.com/nireo/newspeak" target="_blank" rel="noopener noreferrer">newspeak</a>: End-to-end encrypted chat in Rust implementing Signal&#39;s Post-Quantum Extended Diffie-Hellman and Double Ratchet. Built with <code>tonic</code> for gRPC, SQLite for storage, <code>dalek</code> primitives, and a <code>ratatui</code> terminal UI.</li>
 </ul>
 <details>
@@ -34,13 +38,13 @@
 <li><a href="https://github.com/nireo/schnorr" target="_blank" rel="noopener noreferrer">schnorr</a>: Schnorr signatures implemented over secp256k1 curve in 100 lines of Python. Serves as an educational implementation without dependencies (related to math).</li>
 </ul>
 </details>
-<h3 id="programming-languages-and-parsing">programming languages and parsing</h3>
+<h3 id="programming-languages-and-parsing">Programming languages and parsing</h3>
 <ul>
 <li><a href="https://github.com/nireo/kukka" target="_blank" rel="noopener noreferrer">kukka</a>: Small and fast parser combinator library in Rust that uses static dispatch to avoid trait-object overhead. It&#39;s mature enough to write performant parsers for JSON and CSV in a few lines.</li>
-<li><a href="https://github.com/nireo/ff" target="_blank" rel="noopener noreferrer">ff</a>: A single file C compiler that is able to compile itself into arm64.</li>
-<li><a href="https://github.com/nireo/mc" target="_blank" rel="noopener noreferrer">mc</a>: A simplistic C compiler written in Go with lexical analysis, parsing, IR generation, and x64 assembly output. Stopped working on this after getting a macbook.</li>
+<li><a href="https://github.com/nireo/ff" target="_blank" rel="noopener noreferrer">ff</a>: A single-file C compiler that is able to compile itself into ARM64.</li>
+<li><a href="https://github.com/nireo/mc" target="_blank" rel="noopener noreferrer">mc</a>: A simplistic C compiler written in Go with lexical analysis, parsing, IR generation, and x64 assembly output. Stopped working on this after getting a MacBook.</li>
 </ul>
-<h3 id="distributed-systems-and-databases">distributed systems and databases</h3>
+<h3 id="distributed-systems-and-databases">Distributed systems and databases</h3>
 <ul>
 <li><a href="https://github.com/nireo/haystack" target="_blank" rel="noopener noreferrer">haystack</a>: Distributed file system inspired by Facebook&#39;s Haystack architecture. Uses a Raft-based directory cluster to map files to append-only volumes and coordinates replication across store servers.</li>
 <li><a href="https://github.com/nireo/distsql" target="_blank" rel="noopener noreferrer">distsql</a>: Distributed consensus layer built on top of SQLite for coordinating state across nodes.</li>
@@ -51,7 +55,7 @@
 <li><a href="https://github.com/nireo/levelsql" target="_blank" rel="noopener noreferrer">levelsql</a>: Minimal SQL implementation that stores relational data as key-value pairs on LevelDB.</li>
 </ul>
 </details>
-<h3 id="random-fun-tools">random / fun / tools</h3>
+<h3 id="random-fun-tools">Random / fun / tools</h3>
 <ul>
 <li><a href="https://github.com/nireo/dot" target="_blank" rel="noopener noreferrer">dot</a>: A tiny easy-to-use dotfile manager built with Ruby in a few hundred lines.</li>
 <li><a href="https://github.com/nireo/hashvis" target="_blank" rel="noopener noreferrer">hashvis</a>: Small command line utility that generates unique ASCII art based on file contents written in C.</li>

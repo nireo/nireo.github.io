@@ -8,6 +8,13 @@
     --link: #8ea6ff;
     --blockquote: #ddd;
     --surface: #111;
+    --syntax-text: #f7eef2;
+    --syntax-comment: #bbd9ff;
+    --syntax-string: #d0b9dc;
+    --syntax-keyword: #c0d6fd;
+    --syntax-function: #c1beee;
+    --syntax-type: #bfd8d2;
+    --syntax-literal: #f0d1e0;
     --mono: Monaco, Menlo, "SF Mono", SFMono-Regular, "DejaVu Sans Mono", "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
@@ -22,6 +29,13 @@
         --link: #3b5bdb;
         --blockquote: #333;
         --surface: #f2f2f2;
+        --syntax-text: #242026;
+        --syntax-comment: #426a9b;
+        --syntax-string: #765580;
+        --syntax-keyword: #31558a;
+        --syntax-function: #5c5291;
+        --syntax-type: #3d6b62;
+        --syntax-literal: #8b3f62;
     }
 }
 
@@ -187,10 +201,37 @@ code {
 
 pre {
     background: var(--surface);
+    color: var(--syntax-text);
     overflow-x: auto;
     padding: 1rem;
     white-space: pre-wrap;
     word-break: break-word;
+}
+
+.tok-comment {
+    color: var(--syntax-comment);
+    font-style: italic;
+}
+
+.tok-string {
+    color: var(--syntax-string);
+}
+
+.tok-keyword {
+    color: var(--syntax-keyword);
+    font-weight: 700;
+}
+
+.tok-function {
+    color: var(--syntax-function);
+}
+
+.tok-type {
+    color: var(--syntax-type);
+}
+
+.tok-number {
+    color: var(--syntax-literal);
 }
 
 :not(pre) > code {
