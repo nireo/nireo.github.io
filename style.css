@@ -1,39 +1,71 @@
 @font-face {
     font-display: swap;
-    font-family: "JetBrains Mono";
+    font-family: "Libron";
     font-style: normal;
-    font-weight: 100 800;
-    src: url("fonts/JetBrainsMono-variable.woff2") format("woff2");
+    font-weight: 400;
+    src: url("fonts/Libron-Regular.woff2") format("woff2");
 }
 
 @font-face {
     font-display: swap;
-    font-family: "JetBrains Mono";
+    font-family: "Libron";
+    font-style: normal;
+    font-weight: 700;
+    src: url("fonts/Libron-Bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Libron";
     font-style: italic;
-    font-weight: 100 800;
-    src: url("fonts/JetBrainsMono-Italic-variable.woff2") format("woff2");
+    font-weight: 400;
+    src: url("fonts/Libron-Italic.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Libron";
+    font-style: italic;
+    font-weight: 700;
+    src: url("fonts/Libron-BoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "IBM Plex Mono";
+    font-style: normal;
+    font-weight: 400;
+    src: url("fonts/IBMPlexMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "IBM Plex Mono";
+    font-style: normal;
+    font-weight: 700;
+    src: url("fonts/IBMPlexMono-Bold.woff2") format("woff2");
 }
 
 :root {
     color-scheme: dark;
-    --bg: #000;
-    --text: #c4c4c4;
-    --muted: #858585;
-    --heading: #eeeeee;
+    --bg: #191817;
+    --text: #d2d0cb;
+    --muted: #a39e95;
+    --heading: #f0ede7;
     --hover: #ffffff;
     --link: #b0c0d0;
     --link-highlight: rgba(176, 192, 208, 0.16);
-    --blockquote: #c4c4c4;
-    --surface: #1e1c1c;
-    --syntax-text: #c4c4c4;
+    --blockquote: #d2d0cb;
+    --surface: #252321;
+    --syntax-text: #d2d0cb;
     --syntax-comment: #8fb398;
     --syntax-string: #a5b5a2;
     --syntax-keyword: #adb9c6;
     --syntax-function: #e4e4e4;
     --syntax-type: #adbbb5;
     --syntax-literal: #d9c7aa;
-    --site-font: var(--mono);
-    --mono: "JetBrains Mono", Menlo, Monaco, "SF Mono", SFMono-Regular, "DejaVu Sans Mono", "Liberation Mono", Consolas, "Courier New", monospace;
+    --site-font: "Libron", Georgia, "Times New Roman", serif;
+    --mono: "IBM Plex Mono", Menlo, Monaco, "SF Mono", SFMono-Regular, "DejaVu Sans Mono", "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
 @media (prefers-color-scheme: light) {
@@ -78,23 +110,23 @@ h1,
 h2,
 h3 {
     color: var(--heading);
-    font-family: var(--mono);
+    font-family: var(--site-font);
     font-weight: 400;
     line-height: 1.15;
 }
 
 h1 {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     margin: 0 0 2rem;
 }
 
 h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin: 3rem 0 1rem;
 }
 
 h3 {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
     margin: 2rem 0 0.5rem;
 }
 
@@ -282,11 +314,11 @@ pre {
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 2.25rem;
     }
 
     h2 {
-        font-size: 1.45rem;
+        font-size: 1.6rem;
     }
 
     .blog-posts li {
@@ -302,7 +334,7 @@ pre {
 
 /* Home page */
 .home-details h2 {
-    font-size: 1rem;
+    font-size: 1.15rem;
     margin: 2rem 0 0.75rem;
 }
 
