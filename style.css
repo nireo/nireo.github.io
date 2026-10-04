@@ -30,22 +30,6 @@
     src: url("fonts/Libron-BoldItalic.woff2") format("woff2");
 }
 
-@font-face {
-    font-display: swap;
-    font-family: "IBM Plex Mono";
-    font-style: normal;
-    font-weight: 400;
-    src: url("fonts/IBMPlexMono-Regular.woff2") format("woff2");
-}
-
-@font-face {
-    font-display: swap;
-    font-family: "IBM Plex Mono";
-    font-style: normal;
-    font-weight: 700;
-    src: url("fonts/IBMPlexMono-Bold.woff2") format("woff2");
-}
-
 :root {
     color-scheme: dark;
     --bg: #191817;
@@ -65,7 +49,7 @@
     --syntax-type: #adbbb5;
     --syntax-literal: #d9c7aa;
     --site-font: "Libron", Georgia, "Times New Roman", serif;
-    --mono: "IBM Plex Mono", Menlo, Monaco, "SF Mono", SFMono-Regular, "DejaVu Sans Mono", "Liberation Mono", Consolas, "Courier New", monospace;
+    --mono: Monaco, Menlo, "DejaVu Sans Mono", "SF Mono", SFMono-Regular, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 @media (prefers-color-scheme: light) {
