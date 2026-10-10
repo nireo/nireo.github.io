@@ -64,15 +64,15 @@
 
 :root {
   color-scheme: light;
-  --bg: #ffffff;
-  --text: #222222;
+  --bg: #fefefe;
+  --text: #333333;
   --muted: #555555;
-  --heading: #1a1a1a;
+  --heading: var(--text);
   --hover: #0090c0;
   --link: #0090c0;
   --link-highlight: rgba(0, 144, 192, 0.1);
   --visited-link: #00608f;
-  --blockquote: #222222;
+  --blockquote: var(--text);
   --surface: #eeffcc;
   --inline-surface: #ecf0f3;
   --syntax-text: #333333;
@@ -82,7 +82,7 @@
   --syntax-function: #333333;
   --syntax-type: #333333;
   --syntax-literal: #333333;
-  --body-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --body-font: "helvetica neue", arial, sans-serif;
   --site-font: var(--body-font);
   --mono:
     Monaco, Menlo, "DejaVu Sans Mono", "SF Mono", SFMono-Regular, Consolas,
@@ -92,15 +92,15 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --bg: #191817;
-    --text: #d2d0cb;
+    --bg: #0c0c0c;
+    --text: rgb(255 255 255 / 87%);
     --muted: #a39e95;
-    --heading: #f0ede7;
+    --heading: var(--text);
     --hover: #ffffff;
     --link: #b0c0d0;
     --link-highlight: rgba(176, 192, 208, 0.16);
     --visited-link: #b0c0d0;
-    --blockquote: #d2d0cb;
+    --blockquote: var(--text);
     --surface: #252321;
     --inline-surface: #252321;
     --syntax-text: #d2d0cb;
