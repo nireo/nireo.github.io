@@ -126,9 +126,9 @@ html {
 
 body {
   font-family: var(--body-font);
-  margin: 40px 0;
+  margin: 40px auto;
   max-width: 900px;
-  padding-left: 40px;
+  padding: 0 40px;
 }
 
 h1,
@@ -352,7 +352,7 @@ pre {
 
   body {
     margin: 1rem;
-    padding-left: 0;
+    padding: 0;
   }
 
   h1 {
