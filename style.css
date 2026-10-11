@@ -277,15 +277,6 @@ summary {
   text-underline-offset: 5px;
 }
 
-.fingerprint {
-  font-size: 0;
-}
-
-.fingerprint::after {
-  content: "pubkey";
-  font-size: 18px;
-}
-
 .blog-posts {
   margin-top: 4rem;
 }
