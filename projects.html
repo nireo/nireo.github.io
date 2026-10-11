@@ -20,11 +20,13 @@
 <h3 id="ml-ai">ML/AI</h3>
 <ul>
 <li><a href="https://github.com/nireo/chibillm" target="_blank" rel="noopener noreferrer">chibillm</a>: Zero dependency C++ LLM inference engine with custom Metal kernels. Currently it&#39;s able to run Qwen3.5, but I&#39;m attempting to get Qwen3.8-27b running at least somewhat efficiently. The engine itself has zero dependencies but the HTTP library for serving the completion endpoint and JSON parsing have dependencies.</li>
+<li><a href="https://github.com/nireo/kestrel" target="_blank" rel="noopener noreferrer">kestrel</a>: Hybrid search engine in Rust combining BM25 keyword search and vector search with reciprocal rank fusion. Embeds document chunks locally and supports snapshots for saving and restoring collections.</li>
 </ul>
 <h3 id="security-and-cryptography">Security and cryptography</h3>
 <ul>
 <li><a href="https://github.com/nireo/c25519" target="_blank" rel="noopener noreferrer">c25519</a>: Side-channel-attack-resistant Ed25519 implementation in C that also includes SHA-512. It focuses on practical performance with generally good results while passing a broad set of test vectors.</li>
 <li><a href="https://github.com/nireo/newspeak" target="_blank" rel="noopener noreferrer">newspeak</a>: End-to-end encrypted chat in Rust implementing Signal&#39;s Post-Quantum Extended Diffie-Hellman and Double Ratchet. Built with <code>tonic</code> for gRPC, SQLite for storage, <code>dalek</code> primitives, and a <code>ratatui</code> terminal UI.</li>
+<li><a href="https://github.com/nireo/mike" target="_blank" rel="noopener noreferrer">mike</a>: Pure Go implementation of Module Isogeny Key-Exchange (MIKE), an elliptic-curve isogeny key-agreement scheme. Supports all six parameter sets without cgo, assembly, or external dependencies.</li>
 </ul>
 <details>
 <summary>[more]</summary>
