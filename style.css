@@ -1,5 +1,13 @@
 @font-face {
-  font-display: swap;
+  font-display: optional;
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("fonts/GeistMonoVariable.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: optional;
   font-family: "Geist";
   font-style: normal;
   font-weight: 100 900;
@@ -7,59 +15,11 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: optional;
   font-family: "Geist";
   font-style: italic;
   font-weight: 100 900;
   src: url("fonts/GeistVariable-Italic.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 100 900;
-  src: url("fonts/InterVariable.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Inter";
-  font-style: italic;
-  font-weight: 100 900;
-  src: url("fonts/InterVariable-Italic.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Libron";
-  font-style: normal;
-  font-weight: 400;
-  src: url("fonts/Libron-Regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Libron";
-  font-style: normal;
-  font-weight: 700;
-  src: url("fonts/Libron-Bold.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Libron";
-  font-style: italic;
-  font-weight: 400;
-  src: url("fonts/Libron-Italic.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Libron";
-  font-style: italic;
-  font-weight: 700;
-  src: url("fonts/Libron-BoldItalic.woff2") format("woff2");
 }
 
 :root {
@@ -69,14 +29,16 @@
   --muted: #959597;
   --heading: #f0f0f4;
   --hover: #ffffff;
-  --link: #dbdbdc;
-  --link-highlight: rgba(53, 81, 243, 0.12);
-  --visited-link: #dbdbdc;
+  --link: #b0c0d0;
+  --link-highlight: rgba(176, 192, 208, 0.16);
+  --visited-link: #b0c0d0;
   --accent: #3551f3;
   --blockquote: #c3c3c4;
   --surface: #16161a;
   --inline-surface: #242428;
   --nav-border: #242428;
+  --code-border: #4c4c50;
+  --quote-border: #61aeee;
   --syntax-text: #abb2bf;
   --syntax-comment: #828286;
   --syntax-string: #98c379;
@@ -84,11 +46,39 @@
   --syntax-function: #61aeee;
   --syntax-type: #e6c07b;
   --syntax-literal: #d19a66;
-  --body-font: "Inter", "Helvetica Neue", Arial, sans-serif;
-  --site-font: var(--body-font);
+  --body-font: "Geist", "Helvetica Neue", Arial, sans-serif;
   --mono:
     Menlo, Monaco, "DejaVu Sans Mono", "SF Mono", SFMono-Regular, Consolas,
     "Liberation Mono", "Courier New", monospace;
+}
+
+/* Match the quiet dark palette when the browser prefers a light appearance. */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --bg: #f3f2ef;
+    --text: #57575b;
+    --muted: #68686c;
+    --heading: #29292d;
+    --hover: #243f50;
+    --link: #42677b;
+    --link-highlight: rgba(66, 103, 123, 0.1);
+    --visited-link: #42677b;
+    --accent: #536b91;
+    --blockquote: #5b5b60;
+    --surface: #eae9e6;
+    --inline-surface: #e7e6e3;
+    --nav-border: #d8d7d3;
+    --code-border: #cccbc7;
+    --quote-border: #7891a0;
+    --syntax-text: #45454a;
+    --syntax-comment: #69696d;
+    --syntax-string: #506647;
+    --syntax-keyword: #79567f;
+    --syntax-function: #42677b;
+    --syntax-type: #77613f;
+    --syntax-literal: #8a5d40;
+  }
 }
 
 * {
@@ -98,22 +88,26 @@
 html {
   background: var(--bg);
   color: var(--text);
-  font: 16px/1.6 var(--body-font);
+  font: 17px/1.6 var(--body-font);
   font-optical-sizing: auto;
+  font-synthesis: none;
+  scrollbar-gutter: stable;
 }
 
 body {
   font-family: var(--body-font);
-  margin: 0 auto;
-  max-width: 1040px;
+  margin: 0;
   padding: 0 40px 64px;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   color: var(--heading);
-  font-family: var(--site-font);
+  font-family: "Geist Mono", var(--mono);
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.25;
@@ -168,7 +162,7 @@ a:visited {
 
 main a {
   text-decoration-color: var(--link);
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
   text-underline-offset: 3px;
   transition:
     background-color 140ms ease,
@@ -178,7 +172,7 @@ main a {
 
 main a:hover,
 main a:focus-visible {
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 3px;
 }
 
 a:hover,
@@ -208,7 +202,7 @@ video {
 }
 
 blockquote {
-  border-left: 3px solid #61aeee;
+  border-left: 3px solid var(--quote-border);
   color: var(--blockquote);
   padding-left: 1rem;
 }
@@ -224,62 +218,61 @@ summary {
 
 .container {
   position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container > div {
+  min-width: 0;
 }
 
 .navbar {
-  align-items: center;
-  border-bottom: 1px solid var(--nav-border);
-  display: flex;
-  flex-wrap: wrap;
   font-family: var(--body-font);
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 16px;
+  margin: 16px 0 24px;
+}
+
+.navbar-links {
+  align-items: center;
+  display: flex;
   gap: 28px;
-  max-width: 800px;
   min-height: 72px;
-  margin: 16px auto 32px;
-  padding: 12px 0;
 }
 
 .navbar a {
+  align-items: center;
   color: var(--muted);
-  padding: 10px 0;
+  display: inline-flex;
+  min-height: 44px;
+  padding: 8px 0;
   text-decoration: none;
   transition: color 120ms ease;
 }
 
 .navbar a:hover,
 .navbar a:focus-visible {
-  background-color: transparent;
+  background: transparent;
   color: var(--heading);
 }
 
 .navbar a:focus-visible {
-  outline-color: var(--muted);
+  outline-color: var(--link);
 }
 
 .navbar a[aria-current="page"] {
   color: var(--heading);
-  text-decoration: underline;
-  text-decoration-color: var(--muted);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 7px;
 }
 
-.navbar a[href="https://github.com/nireo"] {
+.navbar .navbar-external {
   margin-left: auto;
 }
 
-
-@media (pointer: coarse) {
-  .navbar a {
-    align-items: center;
-    display: inline-flex;
-    min-height: 44px;
-  }
+main {
+  /* Keep selection painting within the reading column. */
+  position: relative;
+  max-width: 800px;
+  margin: 0;
 }
-
-main { max-width: 800px; margin: 0 auto; }
 
 .blog-posts {
   margin-top: 2.5rem;
@@ -353,7 +346,7 @@ pre {
 :not(pre) > code {
   background: var(--inline-surface);
   color: var(--heading);
-  border: 1px solid #4c4c50;
+  border: 1px solid var(--code-border);
   border-radius: 4px;
   padding: 0.1rem 0.3rem;
 }
@@ -376,7 +369,14 @@ pre {
     font-size: 1.375rem;
   }
 
-  .navbar { gap: 24px; margin-top: 4px; margin-bottom: 28px; }
+  .navbar {
+    margin: 4px 0 20px;
+  }
+
+  .navbar-links {
+    gap: 24px;
+    min-height: 64px;
+  }
 
   .blog-posts li {
     display: block;

@@ -3,15 +3,19 @@
 <head>
     <title>nireo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../fonts/GeistVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/GeistMonoVariable.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../style.css">
     
 </head>
 <body>
     <div class="container">
         <nav class="navbar" aria-label="Main navigation">
-            <a href="/">home</a>
-            <a href="/projects">projects</a>
-            <a href="https://github.com/nireo" rel="noopener noreferrer" target="_blank">github</a>
+            <div class="navbar-links">
+                <a href="/">home</a>
+                <a href="/projects">projects</a>
+                <a class="navbar-external" href="https://github.com/nireo" rel="noopener noreferrer" target="_blank">github</a>
+            </div>
         </nav>
         
         <div>
