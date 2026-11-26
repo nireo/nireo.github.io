@@ -1,27 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>nireo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preload" href="../fonts/GeistVariable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../fonts/GeistMonoVariable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.css">
-    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poor man&#39;s org agenda - nireo</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar" aria-label="Main navigation">
-            <div class="navbar-links">
-                <a href="/">home</a>
-                <a href="/projects">projects</a>
-                <a class="navbar-external" href="https://github.com/nireo" rel="noopener noreferrer" target="_blank">github</a>
-            </div>
-        </nav>
-        
-        <div>
-            <main>
-                
-                <h2 id="poor-man-s-org-agenda">Poor man&#39;s org agenda</h2>
+<nav>
+<a href="/">home</a> |
+<a href="/projects">projects</a> |
+<a href="https://github.com/nireo">github</a>
+</nav>
+<main>
+<h2 id="poor-man-s-org-agenda">Poor man&#39;s org agenda</h2>
 <p>I always thought that Emacs&#39; org-mode was excellent at keeping track of todos and the integration of possible todos into existing documents was very good. The problem is that you are forced to use Emacs or rely on editor-specific plugins that are often overly complicated for my needs. Mainly, I want:</p>
 <ul>
 <li>The ability to take quick notes from the terminal without opening an editor</li>
@@ -52,11 +44,6 @@ $ nt agenda -t school # agenda for a specific tag</code></pre>
 <p>Sometimes I would like to take meeting notes in an editor, since taking a large amount of notes using commands isn&#39;t feasible. There is an <code>nt open</code> command which takes an optional date argument and defaults to today. It reads <code>$EDITOR</code> from your shell environment and opens the file using that. That way I can easily type whatever longer notes I need into a Markdown file using the editor of my choice.</p>
 <h3 id="conclusion">Conclusion</h3>
 <p>Is this better than org-mode? No. Should I use this? Probably not. Do I see the irony of complaining about complexity and also creating a somewhat large Python script? Yes. The main thing is that the idea of actually having a separate editor for something that ultimately is quite simple seems unnecessary. Now, I have this editor-agnostic version that can be run from the command line, and it will work in the future even if I decide to switch editors. Currently the notes are not synced, but that can be done using some other service, and that is not the responsibility of the script.</p>
-
-                
-                
-            </main>
-        </div>
-    </div>
+</main>
 </body>
 </html>

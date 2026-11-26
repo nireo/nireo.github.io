@@ -1,65 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>nireo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preload" href="fonts/GeistVariable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/GeistMonoVariable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nireo</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar" aria-label="Main navigation">
-            <div class="navbar-links">
-                <a href="/" aria-current="page">home</a>
-                <a href="/projects">projects</a>
-                <a class="navbar-external" href="https://github.com/nireo" rel="noopener noreferrer" target="_blank">github</a>
-            </div>
-        </nav>
-        <div>
-            <main>
-                <div class="home-intro">
-                    <div class="home-details">
-                        <p>I&#39;m currently working as a back-end developer mainly using Go, Kotlin, and Python. I have a bachelor&#39;s degree in computer science, and I&#39;m currently pursuing a master&#39;s degree in computer science with a focus on machine learning and data science. In addition to regular ML courses, I&#39;m taking courses related to high-performance computing, supercomputers, and computational biology.</p>
-                        <section>
-                            <h2>Interests</h2>
-                            <ul>
-                                <li>System architecture and distributed systems</li>
-                                <li>Digital freedom, privacy, peer-to-peer systems, decentralization and cryptography</li>
-                                <li>Computer vision, reinforcement learning, LLMs, medical and biological applications of AI</li>
-                                <li>Note-taking systems, ergonomic keyboards, Neovim, and Emacs</li>
-                                <li>Classic fiction literature</li>
-                            </ul>
-                        </section>
-                    </div>
-                </div>
+<nav>
+<a href="/" aria-current="page">home</a> |
+<a href="/projects">projects</a> |
+<a href="https://github.com/nireo">github</a>
+</nav>
+<main>
+<h2>about</h2>
+<p>I&#39;m currently working as a back-end developer mainly using Go, Kotlin, and Python. I have a bachelor&#39;s degree in computer science, and I&#39;m currently pursuing a master&#39;s degree in computer science with a focus on machine learning and data science. In addition to regular ML courses, I&#39;m taking courses related to high-performance computing, supercomputers, and computational biology.</p>
 
-                <div class="blog-posts">
-                    <ul>
-                        <li>
-                            <time datetime="2026-08-17">17.08.2026</time>
-                            <a href="/blog/llms_are_here_to_stay.html">LLMs are here to stay</a>
-                        </li>
-                        <li>
-                            <time datetime="2025-11-27">27.11.2025</time>
-                            <a href="/blog/poor_mans_org_agenda.html">Poor man&#39;s org agenda</a>
-                        </li>
-                        <li>
-                            <time datetime="2025-09-05">05.09.2025</time>
-                            <a href="/blog/going_down_to_34.html">Going down to 34 keys</a>
-                        </li>
-                        <li>
-                            <time datetime="2025-09-01">01.09.2025</time>
-                            <a href="/blog/stop_consuming_ragebait.html">Stop consuming ragebait</a>
-                        </li>
-                        <li>
-                            <time datetime="2025-07-15">15.07.2025</time>
-                            <a href="/blog/my_experience_with_36_keys.html">My experience with 36 keys</a>
-                        </li>
-                    </ul>
-                </div>
-            </main>
-        </div>
-    </div>
+<h2>interests</h2>
+<ul>
+<li>System architecture and distributed systems</li>
+<li>Digital freedom, privacy, peer-to-peer systems, decentralization and cryptography</li>
+<li>Computer vision, reinforcement learning, LLMs, medical and biological applications of AI</li>
+<li>Note-taking systems, ergonomic keyboards, Neovim, and Emacs</li>
+<li>Classic fiction literature</li>
+</ul>
+
+<h2>blog</h2>
+<ul>
+<li><time datetime="2026-08-17">2026-08-17</time> <a href="/blog/llms_are_here_to_stay.html">LLMs are here to stay</a></li>
+<li><time datetime="2025-11-27">2025-11-27</time> <a href="/blog/poor_mans_org_agenda.html">Poor man&#39;s org agenda</a></li>
+<li><time datetime="2025-09-05">2025-09-05</time> <a href="/blog/going_down_to_34.html">Going down to 34 keys</a></li>
+<li><time datetime="2025-09-01">2025-09-01</time> <a href="/blog/stop_consuming_ragebait.html">Stop consuming ragebait</a></li>
+<li><time datetime="2025-07-15">2025-07-15</time> <a href="/blog/my_experience_with_36_keys.html">My experience with 36 keys</a></li>
+</ul>
+
+<h2>projects</h2>
+<ul>
+<li><a href="https://github.com/nireo/chibillm">chibillm</a> - zero-dependency C++ LLM inference engine with custom Metal kernels.</li>
+<li><a href="https://github.com/nireo/newspeak">newspeak</a> - end-to-end encrypted chat with PQXDH and the Double Ratchet, in Rust.</li>
+<li><a href="https://github.com/nireo/c25519">c25519</a> - side-channel-resistant Ed25519 with SHA-512, in C.</li>
+<li><a href="https://github.com/nireo/haystack">haystack</a> - distributed file system with a Raft-based directory cluster, in Go.</li>
+<li><a href="https://github.com/nireo/kukka">kukka</a> - fast parser combinators using static dispatch, in Rust.</li>
+</ul>
+<p><a href="/projects">all projects</a></p>
+</main>
 </body>
 </html>
